@@ -7,6 +7,8 @@ export { ForOf } from './Loop/ForOf';
 export { ForIn } from './Loop/ForIn';
 export { While } from './Loop/While';
 export { DoWhile } from './Loop/DoWhile';
+export { Break } from './Loop/Break';
+export { Continue } from './Loop/Continue';
 
 export { If } from './Condition/If';
 export { Else } from './Condition/Else';
