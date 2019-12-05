@@ -1,4 +1,4 @@
-import { Children } from "../interfaces/Children";
+import { Children } from '../interfaces/Children';
 interface Props {
     children: Children;
 }

@@ -1,1 +1,1 @@
-export declare const Break: () => void;
+export declare const Break: () => null;

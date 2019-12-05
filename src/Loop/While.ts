@@ -1,11 +1,11 @@
 import { Children } from '../interfaces/Children';
 
 interface Props extends Children {
-  iteration: boolean;
+  test: boolean;
 }
 
-export const While = ({ children, iteration }: Props) => {
-  while (iteration) {
+export const While = ({ children, test }: Props) => {
+  while (test) {
     return children;
   }
 };

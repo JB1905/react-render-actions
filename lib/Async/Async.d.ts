@@ -1,4 +1,5 @@
-interface Props {
+import { Children } from '../interfaces/Children';
+interface Props extends Children {
 }
-export declare const Async: ({}: Props) => void;
+export declare const Async: ({ children }: Props) => void;
 export {};

@@ -22,7 +22,7 @@ export { Try } from './Async/Try';
 export { Catch } from './Async/Catch';
 export { Finally } from './Async/Finally';
 
-export { Promise } from './Promise/Promise';
+export { RPromise } from './Promise/Promise';
 export { Resolve } from './Promise/Resolve';
 export { Reject } from './Promise/Reject';
 

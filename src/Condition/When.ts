@@ -4,6 +4,6 @@ interface Props extends Children {
   condition: boolean;
 }
 
-export const If = ({ children, condition }: Props) => {
+export const When = ({ condition, children }: Props) => {
   return condition ? children : null;
 };

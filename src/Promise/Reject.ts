@@ -2,4 +2,6 @@ import { Children } from '../interfaces/Children';
 
 interface Props extends Children {}
 
-export const Resolve = ({ children }: Props) => {};
+export const Reject = ({ children }: Props) => {
+  return children;
+};

@@ -1,1 +1,1 @@
-export declare const Continue: () => void;
+export declare const Continue: () => null;
