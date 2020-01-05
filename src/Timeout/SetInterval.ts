@@ -1,17 +1,31 @@
+import { useState, useEffect } from 'react';
+
 import { Children } from '../interfaces/Children';
 
-interface Props extends Children {
-  callback: () => void;
+interface Props {
+  children: any;
+  initialCounter: number;
   enabled: boolean;
-  interval: number;
+  timeout: number;
 }
 
-export const SetInterval = ({ callback, enabled, interval }: Props) => {
-  if (enabled) {
-    setInterval(() => {
-      callback();
-    }, interval);
-  }
+export const SetInterval = ({
+  children,
+  initialCounter = 0,
+  enabled = true,
+  timeout
+}: Props) => {
+  const [counter, setCounter] = useState(initialCounter);
 
-  return null;
+  useEffect(() => {
+    if (enabled) {
+      const interval = setInterval(() => {
+        setCounter(counter + 1);
+      }, timeout);
+
+      return () => clearInterval(interval);
+    }
+  }, [counter, enabled, timeout]);
+
+  return enabled ? children(counter) : null;
 };
