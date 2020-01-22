@@ -8,5 +8,11 @@ interface Props extends Children {
 }
 
 export const Switch = ({ switchValue, children }: Props) => {
+  console.log([].concat(children as any));
+
   return children;
+
+  // switch(switchValue) {
+  //   case
+  // }
 };

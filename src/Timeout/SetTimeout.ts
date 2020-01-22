@@ -11,11 +11,11 @@ interface Props extends Children {
 export const SetTimeout = ({ children, enabled, timeout }: Props) => {
   const [done, setDone] = useState(false);
 
-  // if (enabled) {
-  setTimeout(() => {
-    setDone(true);
-  }, timeout);
-  // }
+  if (enabled) {
+    setTimeout(() => {
+      setDone(true);
+    }, timeout);
+  }
 
   return done ? children : null;
 };

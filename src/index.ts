@@ -5,6 +5,7 @@ export { Default } from './Switch/Default';
 export { For } from './Loop/For';
 export { ForOf } from './Loop/ForOf';
 export { ForIn } from './Loop/ForIn';
+export { ForEach } from './Loop/ForEach';
 export { While } from './Loop/While';
 export { DoWhile } from './Loop/DoWhile';
 export { Break } from './Loop/Break';
@@ -28,3 +29,7 @@ export { Reject } from './Promise/Reject';
 
 export { SetInterval } from './Timeout/SetInterval';
 export { SetTimeout } from './Timeout/SetTimeout';
+
+export { Map } from './Functions/Map';
+export { Filter } from './Functions/Filter';
+export { Reduce } from './Functions/Reduce';

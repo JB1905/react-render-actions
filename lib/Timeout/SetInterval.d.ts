@@ -1,8 +1,8 @@
-import { Children } from '../interfaces/Children';
-interface Props extends Children {
-    callback: () => void;
+interface Props {
+    children: any;
+    initialCounter: number;
     enabled: boolean;
-    interval: number;
+    timeout: number;
 }
-export declare const SetInterval: ({ callback, enabled, interval }: Props) => null;
+export declare const SetInterval: ({ children, initialCounter, enabled, timeout }: Props) => any;
 export {};

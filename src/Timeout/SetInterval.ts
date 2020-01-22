@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import { Children } from '../interfaces/Children';
-
 interface Props {
   children: any;
   initialCounter: number;
