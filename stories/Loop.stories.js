@@ -14,4 +14,6 @@ export default {
   component: For
 };
 
-export const normal = () => <></>;
+export const normal = () => (
+  <ForEach data={[1, 2, 3]}>{item => <p>{item}</p>}</ForEach>
+);

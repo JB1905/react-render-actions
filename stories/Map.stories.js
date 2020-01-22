@@ -7,4 +7,4 @@ export default {
   component: Map
 };
 
-export const normal = () => <></>;
+export const normal = () => <Map data={[1, 2, 3]}>{item => <p>{item}</p>}</Map>;
