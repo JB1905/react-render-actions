@@ -1,11 +1,9 @@
 interface Props {
   data: any[];
-  pattern: any;
   children: any;
+  pattern: any;
 }
 
-export const Filter = ({ data, pattern, children }: Props) => {
-  const filtered = data.filter(item => pattern(item));
-
-  return children(filtered);
+export const Filter = ({ data, children, pattern }: Props) => {
+  return children(data.filter(item => pattern(item)));
 };

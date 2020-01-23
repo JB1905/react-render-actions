@@ -1,11 +1,9 @@
 interface Props {
-  children: any;
   data: any[];
+  children: any;
   pattern: any;
 }
 
-export const Reduce = ({ data, pattern, children }: Props) => {
-  const reduced = data.reduce(pattern);
-
-  return children(reduced);
+export const Reduce = ({ data, children, pattern }: Props) => {
+  return children(data.reduce(pattern));
 };
