@@ -1,6 +1,5 @@
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {
+interface Props {
+  children: any;
   data: object;
   property: string;
   as: any;

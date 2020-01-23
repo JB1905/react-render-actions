@@ -1,6 +1,5 @@
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {
+interface Props {
+  children: any;
   condition: boolean;
 }
 

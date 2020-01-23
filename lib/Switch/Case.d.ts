@@ -1,6 +1,5 @@
-/// <reference types="react" />
-import { Children } from '../interfaces/Children';
-interface Props extends Children {
+interface Props {
+    children: any;
 }
-export declare const Case: ({ children }: Props) => import("react").ReactChildren | import("react").ReactChildren[];
+export declare const Case: ({ children }: Props) => any;
 export {};

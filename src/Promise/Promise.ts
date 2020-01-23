@@ -1,17 +1,14 @@
 import { Resolve } from './Resolve';
 import { Reject } from './Reject';
 
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {
+interface Props {
+  children: any[];
   promise: Promise<any>;
   type: any;
 }
 
-export const RPromise = ({ promise, type, children }: Props) => {
-  const a = [].concat(children as any);
-
+export const RPromise = ({ children, promise, type }: Props) => {
   promise
-    .then(() => a.findIndex((c: any) => (c.type = Resolve)))
-    .catch(() => a.findIndex((c: any) => (c.type = Reject)));
+    .then(() => children.findIndex((c: any) => (c.type = Resolve)))
+    .catch(() => children.findIndex((c: any) => (c.type = Reject)));
 };

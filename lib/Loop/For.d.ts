@@ -1,7 +1,6 @@
-/// <reference types="react" />
-import { Children } from '../interfaces/Children';
-interface Props extends Children {
+interface Props {
+    children: any;
     iterationsCount: number;
 }
-export declare const For: ({ children, iterationsCount }: Props) => import("react").ReactChildren | import("react").ReactChildren[] | undefined;
+export declare const For: ({ children, iterationsCount }: Props) => any;
 export {};

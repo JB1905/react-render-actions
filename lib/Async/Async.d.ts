@@ -1,5 +1,5 @@
-import { Children } from '../interfaces/Children';
-interface Props extends Children {
+interface Props {
+    children: any[];
 }
-export declare const Async: ({ children }: Props) => Promise<undefined>;
+export declare const Async: ({ children }: Props) => Promise<any>;
 export {};

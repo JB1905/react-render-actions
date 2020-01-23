@@ -1,7 +1,5 @@
-import { Children } from '../interfaces/Children';
+interface Props {
+  children: any;
+}
 
-interface Props extends Children {}
-
-export const Resolve = ({ children }: Props) => {
-  return children;
-};
+export const Resolve = ({ children }: Props) => children;

@@ -1,5 +1,3 @@
-import { Children } from '../interfaces/Children';
-
 interface Props {
   children: any;
   data: any[];

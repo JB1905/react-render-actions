@@ -1,5 +1,5 @@
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {}
+interface Props {
+  children: any;
+}
 
 export const Await = ({ children }: Props) => children;

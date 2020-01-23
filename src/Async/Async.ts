@@ -3,12 +3,12 @@ import { Try } from './Try';
 import { Catch } from './Catch';
 import { Finally } from './Finally';
 
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {}
+interface Props {
+  children: any[];
+}
 
 export const Async = async ({ children }: Props) => {
-  return [].concat(children as any).find((c: any) => {
+  return children.find((c: any) => {
     if (c.type === Try) {
       return null;
     }

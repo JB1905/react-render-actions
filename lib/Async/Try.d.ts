@@ -1,5 +1,5 @@
-import { Children } from '../interfaces/Children';
-interface Props extends Children {
+interface Props {
+    children: any;
 }
-export declare const Try: ({ children }: Props) => void;
+export declare const Try: ({ children }: Props) => any;
 export {};
