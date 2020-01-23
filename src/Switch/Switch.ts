@@ -1,18 +1,25 @@
 import { Case } from './Case';
 import { Default } from './Default';
 
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {
+interface Props {
   switchValue: any;
+  children: any;
 }
 
 export const Switch = ({ switchValue, children }: Props) => {
-  console.log([].concat(children as any));
+  const data = []
+    .concat(children as any)
+    .find((c: any) => c.type === Case && c.props.case === switchValue);
 
-  return children;
+  const defaultValue = []
+    .concat(children as any)
+    .find((c: any) => c.type === Default);
 
-  // switch(switchValue) {
-  //   case
-  // }
+  if (data) {
+    return data;
+  } else if (defaultValue) {
+    return defaultValue;
+  } else {
+    return null;
+  }
 };

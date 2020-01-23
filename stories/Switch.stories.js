@@ -9,11 +9,11 @@ export default {
 
 export const normal = () => (
   <Switch switchValue="apple">
-    <Case>
+    <Case case="banana">
       <p>Hello</p>
     </Case>
 
-    <Case>
+    <Case case="apple">
       <p>Hello</p>
     </Case>
 

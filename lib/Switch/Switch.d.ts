@@ -1,7 +1,6 @@
-/// <reference types="react" />
-import { Children } from '../interfaces/Children';
-interface Props extends Children {
+interface Props {
     switchValue: any;
+    children: any;
 }
-export declare const Switch: ({ switchValue, children }: Props) => import("react").ReactChildren | import("react").ReactChildren[];
+export declare const Switch: ({ switchValue, children }: Props) => null;
 export {};

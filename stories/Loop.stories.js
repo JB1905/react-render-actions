@@ -14,6 +14,10 @@ export default {
   component: For
 };
 
+// export const normal = () => (
+//   <ForEach data={[1, 2, 3]}>{item => <p>{item}</p>}</ForEach>
+// );
+
 export const normal = () => (
-  <ForEach data={[1, 2, 3]}>{item => <p>{item}</p>}</ForEach>
+  <ForOf data={[1, 2, 3]}>{value => <p>{value}</p>}</ForOf>
 );

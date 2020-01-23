@@ -1,6 +1,7 @@
-import { Children } from '../interfaces/Children';
-interface Props extends Children {
+interface Props {
+    children: any;
     data: any[];
+    pattern: any;
 }
-export declare const Reduce: ({ data, children }: Props) => void;
+export declare const Reduce: ({ data, pattern, children }: Props) => any;
 export {};

@@ -7,4 +7,8 @@ export default {
   component: Reduce
 };
 
-export const normal = () => <></>;
+export const normal = () => (
+  <Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
+    {reduced => reduced}
+  </Reduce>
+);

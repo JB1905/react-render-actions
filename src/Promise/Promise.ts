@@ -5,9 +5,10 @@ import { Children } from '../interfaces/Children';
 
 interface Props extends Children {
   promise: Promise<any>;
+  type: any;
 }
 
-export const RPromise = ({ promise, children }: Props) => {
+export const RPromise = ({ promise, type, children }: Props) => {
   const a = [].concat(children as any);
 
   promise
