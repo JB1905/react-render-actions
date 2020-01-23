@@ -1,9 +1,8 @@
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {
+interface Props {
+  children: any;
   condition: boolean;
 }
 
-export const Unless = ({ condition, children }: Props) => {
+export const Unless = ({ children, condition }: Props) => {
   return condition ? null : children;
 };

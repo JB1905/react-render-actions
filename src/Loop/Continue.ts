@@ -1,3 +1,1 @@
-export const Continue = () => {
-  return null;
-};
+export const Continue = () => null;

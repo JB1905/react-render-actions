@@ -1,3 +1,1 @@
-export const Break = () => {
-  return null;
-};
+export const Break = () => null;

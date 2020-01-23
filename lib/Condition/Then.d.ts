@@ -1,6 +1,5 @@
-import { Children } from '../interfaces/Children';
 interface Props {
-    children: Children;
+    children: any;
 }
-export declare const Then: ({ children }: Props) => Children;
+export declare const Then: ({ children }: Props) => any;
 export {};

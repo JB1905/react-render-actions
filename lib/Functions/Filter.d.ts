@@ -1,7 +1,7 @@
 interface Props {
     data: any[];
-    pattern: any;
     children: any;
+    pattern: any;
 }
-export declare const Filter: ({ data, pattern, children }: Props) => any;
+export declare const Filter: ({ data, children, pattern }: Props) => any;
 export {};

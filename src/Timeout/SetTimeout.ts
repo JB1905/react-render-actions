@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {
+interface Props {
+  children: any;
   callback: () => void;
   enabled: boolean;
   timeout: number;

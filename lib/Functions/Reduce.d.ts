@@ -1,7 +1,7 @@
 interface Props {
-    children: any;
     data: any[];
+    children: any;
     pattern: any;
 }
-export declare const Reduce: ({ data, pattern, children }: Props) => any;
+export declare const Reduce: ({ data, children, pattern }: Props) => any;
 export {};

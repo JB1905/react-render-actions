@@ -1,14 +1,13 @@
 import { Then } from './Then';
 import { Else } from './Else';
 
-import { Children } from '../interfaces/Children';
-
-interface Props extends Children {
+interface Props {
+  children: any[];
   condition: boolean;
 }
 
 export const If = ({ children, condition }: Props) => {
-  return []
-    .concat(children as any)
-    .find((c: any) => (condition ? c.type === Then : c.type === Else));
+  return children.find(child =>
+    condition ? child.type === Then : child.type === Else
+  );
 };

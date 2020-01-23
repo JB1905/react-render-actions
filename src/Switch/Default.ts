@@ -1,7 +1,5 @@
-import { Children } from '../interfaces/Children';
+interface Props {
+  children: any;
+}
 
-interface Props extends Children {}
-
-export const Default = ({ children }: Props) => {
-  return children;
-};
+export const Default = ({ children }: Props) => children;

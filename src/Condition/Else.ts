@@ -1,7 +1,5 @@
-import { Children } from '../interfaces/Children';
-
 interface Props {
-  children: Children;
+  children: any;
 }
 
 export const Else = ({ children }: Props) => {
