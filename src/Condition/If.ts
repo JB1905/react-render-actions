@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const If = ({ children, condition }: Props) => {
-  return children.find(child =>
-    condition ? child.type === Then : child.type === Else
-  );
+  return children.find(child => {
+    return condition ? child.type === Then : child.type === Else;
+  });
 };

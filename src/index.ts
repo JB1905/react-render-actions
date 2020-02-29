@@ -27,8 +27,8 @@ export { RPromise } from './Promise/Promise';
 export { Resolve } from './Promise/Resolve';
 export { Reject } from './Promise/Reject';
 
-export { SetInterval } from './Timeout/SetInterval';
 export { SetTimeout } from './Timeout/SetTimeout';
+export { SetInterval } from './Timeout/SetInterval';
 
 export { Map } from './Functions/Map';
 export { Filter } from './Functions/Filter';
