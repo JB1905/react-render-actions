@@ -7,7 +7,7 @@ interface Props {
   children: any[];
 }
 
-export const Async = async ({ children }: Props) => {
+export const Async = ({ children }: Props) => {
   return children.find((c: any) => {
     if (c.type === Try) {
       return null;

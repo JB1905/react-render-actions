@@ -4,7 +4,6 @@ import { Switch, Case, Default } from '../lib/react-render-actions.esm';
 
 export default {
   title: 'Switch',
-  component: Switch
 };
 
 export const normal = () => (

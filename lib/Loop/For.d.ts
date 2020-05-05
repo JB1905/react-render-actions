@@ -1,6 +1,8 @@
 interface Props {
     children: any;
-    iterationsCount: number;
+    start: number;
+    comparator: any;
+    next: any;
 }
-export declare const For: ({ children, iterationsCount }: Props) => any;
+export declare const For: ({ children, start, comparator, next }: Props) => any;
 export {};

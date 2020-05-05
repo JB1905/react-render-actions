@@ -1,6 +1,6 @@
 interface Props {
   children: any;
-  test: boolean;
+  test: any;
 }
 
 export const While = ({ children, test }: Props) => {

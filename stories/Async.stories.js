@@ -5,22 +5,23 @@ import {
   Await,
   Try,
   Catch,
-  Finally
+  Finally,
 } from '../lib/react-render-actions.esm';
 
 export default {
-  title: 'Async-Await',
-  component: Async
+  title: 'Async',
 };
 
 export const normal = () => (
   <Async>
     <Try>
       <Await />
-
-      <Catch></Catch>
-
-      <Finally></Finally>
     </Try>
+
+    <Catch>{(error) => <p>{error}</p>}</Catch>
+
+    <Finally>
+      <p>Finally</p>
+    </Finally>
   </Async>
 );

@@ -1,6 +1,6 @@
 interface Props {
     children: any;
-    condition: boolean;
+    test: any;
 }
-export declare const DoWhile: ({ children, condition }: Props) => any;
+export declare const DoWhile: ({ children, test }: Props) => any;
 export {};

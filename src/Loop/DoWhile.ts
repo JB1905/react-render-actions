@@ -1,10 +1,10 @@
 interface Props {
   children: any;
-  condition: boolean;
+  test: any;
 }
 
-export const DoWhile = ({ children, condition }: Props) => {
+export const DoWhile = ({ children, test }: Props) => {
   do {
     return children;
-  } while (condition);
+  } while (test);
 };

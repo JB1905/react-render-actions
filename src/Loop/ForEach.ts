@@ -3,6 +3,8 @@ interface Props {
   children: any;
 }
 
-export const ForEach = ({ data, children }: Props) => {
-  return data.forEach((item, index) => children(item, index));
+export const ForEach = ({ children, data }: Props): any => {
+  return data.forEach((item, index) => {
+    return children(item, index);
+  });
 };

@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 interface Props {
   children: any;
-  callback: () => void;
   enabled: boolean;
   timeout: number;
 }

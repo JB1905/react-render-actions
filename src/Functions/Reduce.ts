@@ -1,5 +1,5 @@
 interface Props {
-  data: any[];
+  data: any;
   children: any;
   pattern: any;
 }

@@ -4,5 +4,5 @@ interface Props {
     enabled: boolean;
     timeout: number;
 }
-export declare const SetInterval: ({ children, initialCounter, enabled, timeout }: Props) => any;
+export declare const SetInterval: ({ children, initialCounter, enabled, timeout, }: Props) => any;
 export {};

@@ -10,7 +10,9 @@
   "scripts": {
     "release": "rimraf lib/* && npm run prettier && npm run lint && npm run build",
     "build": "rollup -c",
+    "test": "jest --coverage",
     "watch": "npm run build -- --watch",
+    "watch:test": "npm run test -- --watch",
     "lint": "eslint 'src/**/*.ts' --fix",
     "prettier": "prettier --write 'src/**/*.ts'",
     "storybook": "start-storybook -p 6006",
@@ -35,32 +37,41 @@
   },
   "homepage": "https://github.com/JB1905/react-render-actions#readme",
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^7.1.1",
-    "@storybook/addon-knobs": "^5.3.14",
-    "@storybook/addon-links": "^5.3.14",
-    "@storybook/addons": "^5.3.14",
-    "@storybook/react": "^5.3.14",
-    "@storybook/storybook-deployer": "^2.8.3",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
+    "@storybook/storybook-deployer": "^2.8.5",
+    "@testing-library/react": "^10.0.4",
+    "@types/jest": "^25.2.1",
     "@types/prop-types": "^15.7.3",
-    "@types/react": "^16.9.23",
-    "@typescript-eslint/parser": "^2.21.0",
-    "babel-loader": "^8.0.6",
+    "@types/react": "^16.9.34",
+    "@typescript-eslint/parser": "^2.30.0",
+    "babel-loader": "^8.1.0",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^2.5.0",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "rollup-plugin-terser": "^5.2.0",
-    "rollup-plugin-typescript2": "^0.26.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "husky": "^4.2.5",
+    "jest": "^25.5.3",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    }
   },
   "husky": {
     "hooks": {
@@ -68,7 +79,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts}": [
+    "src/**/*.ts": [
       "npm run prettier",
       "npm run lint"
     ]

@@ -11,7 +11,7 @@ export const SetInterval = ({
   children,
   initialCounter = 0,
   enabled = true,
-  timeout
+  timeout,
 }: Props) => {
   const [counter, setCounter] = useState(initialCounter);
 
