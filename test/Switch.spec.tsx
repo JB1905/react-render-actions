@@ -9,10 +9,10 @@ describe('Switch', () => {
 
     const { container } = render(
       <Switch switchValue={switchValue}>
-        {/* <Case case="apple">Apple</Case>
+        <Case case="apple">Apple</Case>
         <Case case="banana">Banana</Case>
         <Case case="pear">Pear</Case>
-        <Case case="raspberry">Raspberry</Case> */}
+        <Case case="raspberry">Raspberry</Case>
 
         <Default>Fruit not found</Default>
       </Switch>

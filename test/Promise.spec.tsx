@@ -4,12 +4,16 @@ import { render } from '@testing-library/react';
 import { RPromise, Resolve, Reject } from '../src';
 
 describe('Promise', () => {
+  const promise = new Promise((resolve, reject) => {
+    resolve(true);
+  });
+
   it('should', () => {
     const { container } = render(
-      <RPromise promise={} type="any" fallback={<p>Loading...</p>}>
-        <Resolve>Resolved</Resolve>
+      <RPromise promise={promise} type="any" fallback={<p>Loading...</p>}>
+        <Resolve>{(data: any) => <>Resolved</>}</Resolve>
 
-        <Reject>Rejected</Reject>
+        <Reject>{(err: any) => <>Rejected</>}</Reject>
       </RPromise>
     );
   });

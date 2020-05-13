@@ -15,8 +15,8 @@ import {
 describe('For', () => {
   it('should', () => {
     const { container } = render(
-      <For start={1} comparator={(a: any) => a < 10} next={null}>
-        {() => null}
+      <For start={1} comparator={(a: any) => a < 10} next={(a: any) => a++}>
+        {(i: any) => null}
       </For>
     );
 
@@ -36,7 +36,9 @@ describe('ForEach', () => {
 
 describe('ForOf', () => {
   it('should', () => {
-    const { container } = render(<ForOf></ForOf>);
+    const { container } = render(
+      <ForOf data={[1, 2, 3, 4]}>{(i: any) => <p>{i}</p>}</ForOf>
+    );
 
     expect(container.firstChild).toBe(null);
   });
@@ -44,7 +46,9 @@ describe('ForOf', () => {
 
 describe('ForIn', () => {
   it('should', () => {
-    const { container } = render(<ForIn></ForIn>);
+    const { container } = render(
+      <ForIn data={[1, 2, 3, 4]}>{(i: any) => <p>{i}</p>}</ForIn>
+    );
 
     expect(container.firstChild).toBe(null);
   });
@@ -52,7 +56,9 @@ describe('ForIn', () => {
 
 describe('While', () => {
   it('should', () => {
-    const { container } = render(<While></While>);
+    const { container } = render(
+      <While test={2 < 4}>{(i: any) => <p>{i}</p>}</While>
+    );
 
     expect(container.firstChild).toBe(null);
   });
@@ -60,7 +66,9 @@ describe('While', () => {
 
 describe('DoWhile', () => {
   it('should', () => {
-    const { container } = render(<DoWhile></DoWhile>);
+    const { container } = render(
+      <DoWhile test={2 < 4}>{(i: any) => <p>{i}</p>}</DoWhile>
+    );
 
     expect(container.firstChild).toBe(null);
   });
