@@ -1,5 +1,3 @@
-interface Props {
-  children: any;
-}
+import React from 'react';
 
-export const Case = ({ children }: Props) => children;
+export const Case: React.FC = ({ children }) => children;

@@ -4,8 +4,6 @@ import { render } from '@testing-library/react';
 import { Async, Await, Try, Catch, Finally } from '../src';
 
 describe('Async-Await', () => {
-  // const mockFetchData = async () => {};
-
   it('should', () => {
     const { container } = render(
       <Async>

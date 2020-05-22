@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 interface Props {
   children: any;
-  initialCounter: number;
-  enabled: boolean;
+  initialCounter?: number;
+  enabled?: boolean;
   timeout: number;
 }
 

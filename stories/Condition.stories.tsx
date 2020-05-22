@@ -1,14 +1,14 @@
 import React from 'react';
-import { number } from '@storybook/addon-knobs';
+import { number, boolean } from '@storybook/addon-knobs';
 
-import { If, Else, Then, When, Unless } from '../lib/react-render-actions.esm';
+import { If, Else, Then, When, Unless } from '../src';
 
 export default {
   title: 'Condition',
 };
 
 export const ifElse = () => (
-  <If condition={number('condition', 10 > 9)}>
+  <If condition={boolean('condition', 10 > 9)}>
     <Then>
       <p>Done</p>
     </Then>
@@ -20,13 +20,13 @@ export const ifElse = () => (
 );
 
 export const when = () => (
-  <When condition={number('condition', 10 > 9)}>
+  <When condition={boolean('condition', 10 > 9)}>
     <p>Done</p>
   </When>
 );
 
 export const unless = () => (
-  <Unless condition={number('condition', 10 > 9)}>
+  <Unless condition={boolean('condition', 10 > 9)}>
     <p>Done</p>
   </Unless>
 );
