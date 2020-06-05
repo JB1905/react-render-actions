@@ -8,9 +8,11 @@ export default {
 
 export const normal = () => (
   <Async>
-    <Try>{/* <Await /> */}</Try>
+    <Try>
+      <Await></Await>
+    </Try>
 
-    {/* <Catch>{(error) => <p>{error}</p>}</Catch> */}
+    <Catch>{(error) => <p>{error}</p>}</Catch>
 
     <Finally>
       <p>Finally</p>
