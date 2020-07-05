@@ -1,6 +1,6 @@
-export { SetTimeout } from './Timeouts/SetTimeout';
-export { SetInterval } from './Timeouts/SetInterval';
+export { SetTimeout } from './timeouts/SetTimeout';
+export { SetInterval } from './timeouts/SetInterval';
 
-export { Map } from './Functions/Map';
-export { Filter } from './Functions/Filter';
-export { Reduce } from './Functions/Reduce';
+export { Map } from './functions/Map';
+export { Filter } from './functions/Filter';
+export { Reduce } from './functions/Reduce';
