@@ -17,5 +17,7 @@ export const setTimeout = () => (
 );
 
 export const setInterval = () => (
-  <SetInterval timeout={1000}>{(timeout: any) => <p>{timeout}</p>}</SetInterval>
+  <SetInterval timeout={1000} enabled={boolean('enabled', true)}>
+    {(timeout: number) => <p>{timeout}</p>}
+  </SetInterval>
 );

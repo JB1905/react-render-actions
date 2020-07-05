@@ -13,10 +13,14 @@ const bands = [
   { name: 'U2' },
 ];
 
+interface Output {
+  name: string;
+}
+
 describe('Map', () => {
-  it('should', () => {
+  it('should render ', () => {
     const { getByText } = render(
-      <Map data={bands}>{({ name }: any) => <p key={name}>{name}</p>}</Map>
+      <Map data={bands}>{({ name }: Output) => <p key={name}>{name}</p>}</Map>
     );
 
     expect(getByText('The Killers')).toBeDefined();
@@ -26,8 +30,8 @@ describe('Map', () => {
 describe('Filter', () => {
   it('should', () => {
     const { getByText } = render(
-      <Filter data={bands} pattern={({ name }: any) => name !== 'U2'}>
-        {({ name }: any) => <p key={name}>{name}</p>}
+      <Filter data={bands} pattern={({ name }: Output) => name !== 'U2'}>
+        {({ name }: Output) => <p key={name}>{name}</p>}
       </Filter>
     );
 
@@ -40,8 +44,8 @@ describe('Reduce', () => {
     const numbers = [1, 2, 3, 4, 5];
 
     const { container } = render(
-      <Reduce data={numbers} pattern={(numbers: any) => numbers}>
-        {({ name }: any) => <p key={name}>{name}</p>}
+      <Reduce data={numbers} pattern={(numbers: Output) => numbers}>
+        {({ name }: Output) => <p key={name}>{name}</p>}
       </Reduce>
     );
 

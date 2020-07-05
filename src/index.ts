@@ -1,34 +1,5 @@
-export { Switch } from './Switch/Switch';
-export { Case } from './Switch/Case';
-export { Default } from './Switch/Default';
-
-export { For } from './Loop/For';
-export { ForOf } from './Loop/ForOf';
-export { ForIn } from './Loop/ForIn';
-export { ForEach } from './Loop/ForEach';
-export { While } from './Loop/While';
-export { DoWhile } from './Loop/DoWhile';
-export { Break } from './Loop/Break';
-export { Continue } from './Loop/Continue';
-
-export { If } from './Condition/If';
-export { Else } from './Condition/Else';
-export { Then } from './Condition/Then';
-export { When } from './Condition/When';
-export { Unless } from './Condition/Unless';
-
-export { Async } from './Async/Async';
-export { Await } from './Async/Await';
-export { Try } from './Async/Try';
-export { Catch } from './Async/Catch';
-export { Finally } from './Async/Finally';
-
-export { RPromise } from './Promise/Promise';
-export { Resolve } from './Promise/Resolve';
-export { Reject } from './Promise/Reject';
-
-export { SetTimeout } from './Timeout/SetTimeout';
-export { SetInterval } from './Timeout/SetInterval';
+export { SetTimeout } from './Timeouts/SetTimeout';
+export { SetInterval } from './Timeouts/SetInterval';
 
 export { Map } from './Functions/Map';
 export { Filter } from './Functions/Filter';
