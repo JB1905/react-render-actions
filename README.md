@@ -23,6 +23,20 @@ $ yarn add react-render-actions
 
 ## Components
 
+### Loops
+
+#### For
+
+#### ForOf
+
+#### ForIn
+
+#### ForEach
+
+#### While
+
+#### DoWhile
+
 ### Functions
 
 #### Map
