@@ -50,8 +50,8 @@ import { Filter } from 'react-render-actions';
 ```jsx
 import { Reduce } from 'react-render-actions';
 
-<Reduce data={[1, 2, 3]} pattern={(numbers) => numbers}>
-  {(item) => <p key={index}>{item}</p>}
+<Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
+  {(value) => <p>{value}</p>}
 </Reduce>
 ```
 
