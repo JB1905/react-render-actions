@@ -60,12 +60,12 @@ describe('Filter', () => {
 
 describe('Reduce', () => {
   it('should reduce provided values', () => {
-    const numbers = [1, 2, 3, 4, 5];
+    const data = [1, 2, 3, 4, 5];
 
     const pattern = (prev: number, next: number) => prev + next;
 
     const { container, getByTestId } = render(
-      <Reduce data={numbers} pattern={pattern}>
+      <Reduce data={data} pattern={pattern}>
         {(value: number) => <p data-testid="result">{value}</p>}
       </Reduce>
     );
@@ -73,7 +73,7 @@ describe('Reduce', () => {
     expect(container).toMatchSnapshot();
 
     expect(getByTestId('result').innerHTML).toBe(
-      numbers.reduce(pattern).toString()
+      data.reduce(pattern).toString()
     );
   });
 });
