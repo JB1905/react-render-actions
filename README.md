@@ -23,6 +23,34 @@ $ yarn add react-render-actions
 
 ## Components
 
+### Switch
+
+```js
+import { Switch, Case, Default } from 'react-render-actions';
+
+<Switch switchValue="banana">
+  <Case case="apple">
+    <p>Apple</p>
+  </Case>
+
+  <Case case="banana">
+    <p>Banana</p>
+  </Case>
+
+  <Case case="pear">
+    <p>Pear</p>
+  </Case>
+
+  <Case case="raspberry">
+    <p>Raspberry</p>
+  </Case>
+
+  <Default>
+    <p>Fruit not found</p>
+  </Default>
+</Switch>
+```
+
 ### Functions
 
 #### Map
