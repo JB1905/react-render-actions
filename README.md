@@ -23,6 +23,24 @@ $ yarn add react-render-actions
 
 ## Components
 
+### Promises
+
+```js
+import { RPromise, Resolve, Reject } from 'react-render-actions';
+
+const promise = {}
+
+<RPromise promise={promise}>
+  <Resolve>
+    <p>Resolved!</p>
+  </Resolve>
+
+  <Reject>
+    <p>Rejected!</p>
+  </Reject>
+</RPromise>
+```
+
 ### Functions
 
 #### Map
