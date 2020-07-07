@@ -27,15 +27,69 @@ $ yarn add react-render-actions
 
 #### For
 
+```js
+import { For } from 'react-render-actions';
+
+<For start={0} comparator={(i) => i < 10} next={(i) => i++}>
+  {(i) => <p key={i}>Hello World!</p>}
+</For>
+```
+
 #### ForOf
+
+```js
+import { ForOf } from 'react-render-actions';
+
+<ForOf data={[1, 2, 3]}>
+  {(i) => <p key={i}>{i}</p>}
+</ForOf>
+```
 
 #### ForIn
 
+```js
+import { ForIn } from 'react-render-actions';
+
+const data = {
+  name: 'John',
+  age: '21',
+  email: 'john@example.com',
+};
+
+<ForIn data={data}>
+  {([key, value]) => <p key={key}>{key}: {value}</p>}
+</ForIn>
+```
+
 #### ForEach
+
+```js
+import { ForEach } from 'react-render-actions';
+
+<ForEach data={[1, 2, 3]}>
+  {(item) => <p>{item}</p>}
+</ForEach>
+```
 
 #### While
 
+```js
+import { While } from 'react-render-actions';
+
+<While test={2 > 1}>
+  <p>Hello World!</p>
+</While>
+```
+
 #### DoWhile
+
+```js
+import { DoWhile } from 'react-render-actions';
+
+<DoWhile test={2 > 1}>
+  <p>Hello World!</p>
+</DoWhile>
+```
 
 ### Functions
 
