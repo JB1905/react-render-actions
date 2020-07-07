@@ -41,7 +41,7 @@ import { Map } from 'react-render-actions';
 import { Filter } from 'react-render-actions';
 
 <Filter data={[1, 2, 3]} pattern={(item) => item !== 2}>
-  {(item, index) => <p key={index}>{item}</p>}
+  {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
 </Filter>
 ```
 
@@ -51,7 +51,7 @@ import { Filter } from 'react-render-actions';
 import { Reduce } from 'react-render-actions';
 
 <Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
-  {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
+  {(reducedValue) => <p>{reducedValue}</p>}
 </Reduce>
 ```
 

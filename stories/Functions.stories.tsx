@@ -27,6 +27,6 @@ export const reduce = () => (
     data={[1, 2, 3]}
     pattern={(prev: number, next: number) => prev + next}
   >
-    {(reduced: number) => <p>{reduced}</p>}
+    {(reducedValue: number) => <p>{reducedValue}</p>}
   </Reduce>
 );
