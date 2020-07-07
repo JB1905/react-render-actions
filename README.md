@@ -51,7 +51,7 @@ import { Filter } from 'react-render-actions';
 import { Reduce } from 'react-render-actions';
 
 <Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
-  {(value) => <p>{value}</p>}
+  {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
 </Reduce>
 ```
 

@@ -12,7 +12,7 @@ export const setTimeout = () => (
     timeout={number('timeout', 1000)}
     enabled={boolean('enabled', false)}
   >
-    <p>Hello</p>
+    <p>Hello World!</p>
   </SetTimeout>
 );
 
