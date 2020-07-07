@@ -110,9 +110,9 @@ import { When } from 'react-render-actions';
 ```js
 import { Unless } from 'react-render-actions';
 
-<When condition={2 > 3}>
+<Unless condition={2 > 3}>
     <p>2 isn't greater than 3</p>
-</When>
+</Unless>
 ```
 
 ## License
