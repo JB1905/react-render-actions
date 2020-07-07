@@ -27,7 +27,7 @@ $ yarn add react-render-actions
 
 #### Map
 
-```jsx
+```js
 import { Map } from 'react-render-actions';
 
 <Map data={[1, 2, 3]}>
@@ -37,7 +37,7 @@ import { Map } from 'react-render-actions';
 
 #### Filter
 
-```jsx
+```js
 import { Filter } from 'react-render-actions';
 
 <Filter data={[1, 2, 3]} pattern={(item) => item !== 2}>
@@ -47,7 +47,7 @@ import { Filter } from 'react-render-actions';
 
 #### Reduce
 
-```jsx
+```js
 import { Reduce } from 'react-render-actions';
 
 <Reduce data={[1, 2, 3]} pattern={(numbers) => numbers}>
@@ -59,7 +59,7 @@ import { Reduce } from 'react-render-actions';
 
 #### SetTimeout
 
-```jsx
+```js
 import { SetTimeout } from 'react-render-actions';
 
 <SetTimeout enabled timeout={4000}>
@@ -69,7 +69,7 @@ import { SetTimeout } from 'react-render-actions';
 
 #### SetInterval
 
-```jsx
+```js
 import { SetInterval } from 'react-render-actions';
 
 <SetInterval enabled initialCounter={0} timeout={2000}>
