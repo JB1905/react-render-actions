@@ -12,13 +12,13 @@ Set of JavaScript actions to use during component rendering
 First, install the library in your project by npm:
 
 ```sh
-$ npm install react-figma-ui
+$ npm install react-render-actions
 ```
 
 Or Yarn:
 
 ```sh
-$ yarn add react-figma-ui
+$ yarn add react-render-actions
 ```
 
 ## Components
@@ -27,15 +27,55 @@ $ yarn add react-figma-ui
 
 #### Map
 
+```jsx
+import { Map } from 'react-render-actions';
+
+<Map data={[1, 2, 3]}>
+  {(item, index) => <p key={index}>{item}</p>}
+</Map>
+```
+
 #### Filter
 
+```jsx
+import { Filter } from 'react-render-actions';
+
+<Filter data={[1, 2, 3]} pattern={(item) => item !== 2}>
+  {(item, index) => <p key={index}>{item}</p>}
+</Filter>
+```
+
 #### Reduce
+
+```jsx
+import { Reduce } from 'react-render-actions';
+
+<Reduce data={[1, 2, 3]} pattern={(numbers) => numbers}>
+  {(item) => <p key={index}>{item}</p>}
+</Reduce>
+```
 
 ### Timeouts
 
 #### SetTimeout
 
+```jsx
+import { SetTimeout } from 'react-render-actions';
+
+<SetTimeout enabled timeout={4000}>
+  <p>Hello</p>
+</SetTimeout>
+```
+
 #### SetInterval
+
+```jsx
+import { SetInterval } from 'react-render-actions';
+
+<SetInterval enabled initialCounter={0} timeout={2000}>
+  {(i) => <p>{i}</p>}
+</SetInterval>
+```
 
 ## License
 
