@@ -38,9 +38,11 @@ describe('Map', () => {
 
 describe('Filter', () => {
   it('should filter provided values', () => {
+    const pattern = ({ name }: Output) => name !== 'U2';
+
     const { container, getByTestId } = render(
-      <Filter data={bands} pattern={({ name }: Output) => name !== 'U2'}>
-        {(filteredData: any) => (
+      <Filter data={bands} pattern={pattern}>
+        {(filteredData: Output[]) => (
           <p data-testid="result">{JSON.stringify(filteredData)}</p>
         )}
       </Filter>
@@ -48,11 +50,11 @@ describe('Filter', () => {
 
     expect(container).toMatchSnapshot();
 
-    expect(getByTestId('result').innerHTML).toBe(
-      JSON.stringify(bands.filter(({ name }) => name !== 'U2'))
-    );
+    const resultContent = getByTestId('result').innerHTML;
 
-    expect(JSON.parse(getByTestId('result').innerHTML).length).toBe(5);
+    expect(resultContent).toBe(JSON.stringify(bands.filter(pattern)));
+
+    expect(JSON.parse(resultContent).length).toBe(5);
   });
 });
 
@@ -60,17 +62,18 @@ describe('Reduce', () => {
   it('should reduce provided values', () => {
     const numbers = [1, 2, 3, 4, 5];
 
+    const pattern = (prev: number, next: number) => prev + next;
+
     const { container, getByTestId } = render(
-      <Reduce
-        data={numbers}
-        pattern={(prev: number, next: number) => prev + next}
-      >
+      <Reduce data={numbers} pattern={pattern}>
         {(value: number) => <p data-testid="result">{value}</p>}
       </Reduce>
     );
 
     expect(container).toMatchSnapshot();
 
-    expect(getByTestId('result').innerHTML).toBe('15');
+    expect(getByTestId('result').innerHTML).toBe(
+      numbers.reduce(pattern).toString()
+    );
   });
 });
