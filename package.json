@@ -1,6 +1,6 @@
 {
   "name": "react-render-actions",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Set of JavaScript actions to use during component rendering",
   "author": "Jakub Biesiada",
   "license": "MIT",
