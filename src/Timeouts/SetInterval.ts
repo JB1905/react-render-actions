@@ -5,6 +5,7 @@ interface Props {
   initialCounter?: number;
   enabled?: boolean;
   timeout: number;
+  onInterval: (counter: number) => void;
 }
 
 export const SetInterval = ({
@@ -12,18 +13,22 @@ export const SetInterval = ({
   initialCounter = 0,
   enabled = true,
   timeout,
+  onInterval,
 }: Props) => {
   const [counter, setCounter] = useState(initialCounter);
 
   useEffect(() => {
     if (enabled) {
       const interval = setInterval(() => {
-        setCounter(counter + 1);
+        const updatedCounter = counter + 1;
+
+        setCounter(updatedCounter);
+        onInterval(updatedCounter);
       }, timeout);
 
       return () => clearInterval(interval);
     }
-  }, [counter, enabled, timeout]);
+  }, [counter, enabled, onInterval, timeout]);
 
   return enabled ? children(counter) : null;
 };
