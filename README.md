@@ -94,10 +94,8 @@ import { SetTimeout } from 'react-render-actions';
 | `timeout`    | number      | ``      |             |
 | `enabled`    | boolean     | ``      |             |
 | `onTimeout`  |             | ``      |             |
-<!--         | `onDone`    | boolean | ``          |  | -->
 | `onEnabled`  |             | ``      |             |
 | `onDisabled` |             | ``      |             |
-<!--         | `onDestroy` |         | ``          |  | -->
 
 #### SetInterval
 
@@ -119,7 +117,6 @@ import { SetInterval } from 'react-render-actions';
 | `onInterval`     |             | ``      |             |
 | `onStart`        |             | ``      |             |
 | `onPause`        |             | ``      |             |
-<!--             | `onDestroy` |         | ``          |  | -->
 
 ## License
 
