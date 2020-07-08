@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface Props {
   readonly children: any;
@@ -15,15 +15,19 @@ export const SetTimeout = ({
 }: Props) => {
   const [done, setDone] = useState(false);
 
-  if (enabled) {
-    setTimeout(() => {
-      setDone(true);
+  useEffect(() => {
+    if (enabled) {
+      const timer = setTimeout(() => {
+        setDone(true);
 
-      if (typeof onTimeout === 'function') {
-        onTimeout();
-      }
-    }, timeout);
-  }
+        if (typeof onTimeout === 'function') {
+          onTimeout();
+        }
+      }, timeout);
+
+      return () => clearTimeout(timer);
+    }
+  }, [enabled, onTimeout, timeout]);
 
   return done ? children : null;
 };

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface Props {
   readonly children: any;
@@ -17,6 +17,11 @@ export const SetInterval = ({
 }: Props) => {
   const [counter, setCounter] = useState(initialCounter);
 
+  const isInitialCounter = useMemo(() => counter === initialCounter, [
+    counter,
+    initialCounter,
+  ]);
+
   useEffect(() => {
     if (enabled) {
       const interval = setInterval(() => {
@@ -33,5 +38,5 @@ export const SetInterval = ({
     }
   }, [counter, enabled, onInterval, timeout]);
 
-  return enabled ? children(counter) : null;
+  return enabled && isInitialCounter ? null : children(counter);
 };
