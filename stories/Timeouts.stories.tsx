@@ -13,6 +13,10 @@ export const setTimeout = () => (
     timeout={number('timeout', 1000)}
     enabled={boolean('enabled', false)}
     onTimeout={action('onTimeout')}
+    // onDone={action('onDone')}
+    onEnabled={action('onEnabled')}
+    onDisabled={action('onDisabled')}
+    // onDestroy={action('onDestroy')}
   >
     <p>Hello World!</p>
   </SetTimeout>
@@ -20,10 +24,13 @@ export const setTimeout = () => (
 
 export const setInterval = () => (
   <SetInterval
-    timeout={1000}
-    enabled={boolean('enabled', true)}
-    onInterval={action(`onInterval`)}
+    interval={1000}
+    paused={boolean('paused', false)}
+    onInterval={action('onInterval')}
+    onStart={action('onStart')}
+    onPause={action('onPause')}
+    // onDestroy={action('onDestroy')}
   >
-    {(timeout: number) => <p>{timeout}</p>}
+    {(interval) => <p>{interval}</p>}
   </SetInterval>
 );
