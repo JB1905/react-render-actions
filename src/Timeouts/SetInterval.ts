@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 
 interface Props {
-  children: any;
-  initialCounter?: number;
-  enabled?: boolean;
-  timeout: number;
-  onInterval?: (counter: number) => void;
+  readonly children: any;
+  readonly initialCounter?: number;
+  readonly enabled?: boolean;
+  readonly timeout: number;
+  readonly onInterval?: (counter: number) => void;
 }
 
 export const SetInterval = ({
   children,
   initialCounter = 0,
-  enabled = true,
+  enabled,
   timeout,
   onInterval,
 }: Props) => {

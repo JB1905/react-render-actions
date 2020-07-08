@@ -1,6 +1,6 @@
 interface Props {
-  data: any;
-  children: any;
+  readonly data: any;
+  readonly children: any;
 }
 
 export const Map = ({ data, children }: Props) => {

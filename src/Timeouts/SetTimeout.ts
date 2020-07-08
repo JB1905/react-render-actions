@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 interface Props {
-  children: any;
-  enabled: boolean;
-  timeout: number;
-  onTimeout?: () => void;
+  readonly children: any;
+  readonly timeout: number;
+  readonly enabled?: boolean;
+  readonly onTimeout?: () => void;
 }
 
 export const SetTimeout = ({

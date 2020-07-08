@@ -1,7 +1,7 @@
 interface Props {
-  data: any;
-  children: any;
-  pattern: any;
+  readonly data: any;
+  readonly children: any;
+  readonly pattern: any;
 }
 
 export const Filter = ({ data, children, pattern }: Props) => {
