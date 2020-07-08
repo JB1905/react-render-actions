@@ -1,9 +1,14 @@
-interface Props {
-  readonly data: any;
-  readonly children: any;
-  readonly pattern: any;
+interface Props<T> {
+  readonly data: T[];
+  readonly children: (reducedValue: T) => JSX.Element;
+  readonly pattern: (
+    previousValue: T,
+    currentValue: T,
+    currentIndex: number,
+    array: T[]
+  ) => T;
 }
 
-export const Reduce = ({ data, children, pattern }: Props) => {
+export const Reduce = <T>({ data, children, pattern }: Props<T>) => {
   return children(data.reduce(pattern));
 };
