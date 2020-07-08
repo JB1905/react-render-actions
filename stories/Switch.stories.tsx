@@ -1,23 +1,23 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 
 import { Switch, Case, Default } from '../src';
 
-describe('Switch', () => {
-  it('should', () => {
-    const switchValue = 'banana';
+export default {
+  title: 'Switch',
+};
 
-    const { container } = render(
-      <Switch switchValue={switchValue}>
-        <Case case="apple">Apple</Case>
-        <Case case="banana">Banana</Case>
-        <Case case="pear">Pear</Case>
-        <Case case="raspberry">Raspberry</Case>
+export const normal = () => (
+  <Switch switchValue="apple">
+    <Case case="banana">
+      <p>Banana</p>
+    </Case>
 
-        <Default>Fruit not found</Default>
-      </Switch>
-    );
+    <Case case="apple">
+      <p>Apple</p>
+    </Case>
 
-    expect(container.firstChild).toBe(null);
-  });
-});
+    <Default>
+      <p>Fruit not found :(</p>
+    </Default>
+  </Switch>
+);
