@@ -7,8 +7,10 @@ describe('SetTimeout', () => {
   it('should render content after timeout', async () => {
     const TIMEOUT = 4000;
 
+    const onTimeout = jest.fn();
+
     const { getByText } = render(
-      <SetTimeout enabled timeout={TIMEOUT}>
+      <SetTimeout enabled timeout={TIMEOUT} onTimeout={onTimeout}>
         <p>Hello</p>
       </SetTimeout>
     );
@@ -16,6 +18,8 @@ describe('SetTimeout', () => {
     await waitFor(() => expect(getByText('Hello')).toBeDefined(), {
       timeout: TIMEOUT,
     });
+
+    expect(onTimeout).toHaveBeenCalledTimes(1);
   });
 });
 
