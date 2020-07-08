@@ -30,10 +30,14 @@ $ yarn add react-render-actions
 ```js
 import { Map } from 'react-render-actions';
 
-<Map data={[1, 2, 3]}>
-  {(item, index) => <p key={index}>{item}</p>}
-</Map>
+<Map data={[1, 2, 3]}>{(item, index) => <p key={index}>{item}</p>}</Map>;
 ```
+
+##### Available options
+
+| Param  | Type  | Default | Description |
+| ------ | ----- | ------- | ----------- |
+| `data` | array | ``      |             |
 
 #### Filter
 
@@ -42,8 +46,15 @@ import { Filter } from 'react-render-actions';
 
 <Filter data={[1, 2, 3]} pattern={(item) => item !== 2}>
   {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
-</Filter>
+</Filter>;
 ```
+
+##### Available options
+
+| Param     | Type          | Default | Description |
+| --------- | ------------- | ------- | ----------- |
+| `data`    | array         | ``      |             |
+| `pattern` | () => boolean | ``      |             |
 
 #### Reduce
 
@@ -52,8 +63,17 @@ import { Reduce } from 'react-render-actions';
 
 <Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
   {(reducedValue) => <p>{reducedValue}</p>}
-</Reduce>
+</Reduce>;
 ```
+
+##### Available options
+
+| Param     | Type  | Default | Description |
+| --------- | ----- | ------- | ----------- |
+| `data`    | array | ``      |             |
+| `pattern` | () => | ``      |             |
+
+---
 
 ### Timeouts
 
@@ -64,18 +84,42 @@ import { SetTimeout } from 'react-render-actions';
 
 <SetTimeout enabled timeout={4000}>
   <p>Hello</p>
-</SetTimeout>
+</SetTimeout>;
 ```
+
+##### Available options
+
+| Param        | Type        | Default | Description |
+| ------------ | ----------- | ------- | ----------- |
+| `timeout`    | number      | ``      |             |
+| `enabled`    | boolean     | ``      |             |
+| `onTimeout`  |             | ``      |             |
+<!--         | `onDone`    | boolean | ``          |  | -->
+| `onEnabled`  |             | ``      |             |
+| `onDisabled` |             | ``      |             |
+<!--         | `onDestroy` |         | ``          |  | -->
 
 #### SetInterval
 
 ```js
 import { SetInterval } from 'react-render-actions';
 
-<SetInterval enabled initialCounter={0} timeout={2000}>
+<SetInterval initialCounter={0} interval={2000}>
   {(i) => <p>{i}</p>}
-</SetInterval>
+</SetInterval>;
 ```
+
+##### Available options
+
+| Param            | Type        | Default | Description |
+| ---------------- | ----------- | ------- | ----------- |
+| `initialCounter` |             | ``      |             |
+| `paused`         |             | ``      |             |
+| `interval`       |             | ``      |             |
+| `onInterval`     |             | ``      |             |
+| `onStart`        |             | ``      |             |
+| `onPause`        |             | ``      |             |
+<!--             | `onDestroy` |         | ``          |  | -->
 
 ## License
 
