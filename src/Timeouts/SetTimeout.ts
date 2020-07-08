@@ -4,7 +4,7 @@ interface Props {
   children: any;
   enabled: boolean;
   timeout: number;
-  onTimeout: () => void;
+  onTimeout?: () => void;
 }
 
 export const SetTimeout = ({
@@ -18,7 +18,10 @@ export const SetTimeout = ({
   if (enabled) {
     setTimeout(() => {
       setDone(true);
-      onTimeout();
+
+      if (typeof onTimeout === 'function') {
+        onTimeout();
+      }
     }, timeout);
   }
 

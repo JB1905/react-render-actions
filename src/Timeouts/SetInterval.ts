@@ -5,7 +5,7 @@ interface Props {
   initialCounter?: number;
   enabled?: boolean;
   timeout: number;
-  onInterval: (counter: number) => void;
+  onInterval?: (counter: number) => void;
 }
 
 export const SetInterval = ({
@@ -23,7 +23,10 @@ export const SetInterval = ({
         const updatedCounter = counter + 1;
 
         setCounter(updatedCounter);
-        onInterval(updatedCounter);
+
+        if (typeof onInterval === 'function') {
+          onInterval(updatedCounter);
+        }
       }, timeout);
 
       return () => clearInterval(interval);
