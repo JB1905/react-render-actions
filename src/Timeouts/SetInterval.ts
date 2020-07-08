@@ -1,30 +1,33 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 
 interface Props {
-  readonly children: any;
+  readonly children: (counter: number) => JSX.Element;
   readonly initialCounter?: number;
-  readonly enabled?: boolean;
-  readonly timeout: number;
+  readonly paused?: boolean;
+  readonly interval: number;
   readonly onInterval?: (counter: number) => void;
+  readonly onStart?: () => void;
+  readonly onPause?: () => void;
+  // readonly onDestroy?: () => void;
 }
 
 export const SetInterval = ({
   children,
   initialCounter = 0,
-  enabled,
-  timeout,
+  paused,
+  interval,
   onInterval,
 }: Props) => {
   const [counter, setCounter] = useState(initialCounter);
 
-  const isInitialCounter = useMemo(() => counter === initialCounter, [
-    counter,
-    initialCounter,
-  ]);
+  // const isInitialCounter = useMemo(() => counter === initialCounter, [
+  //   counter,
+  //   initialCounter,
+  // ]);
 
   useEffect(() => {
-    if (enabled) {
-      const interval = setInterval(() => {
+    if (!paused) {
+      const timer = setInterval(() => {
         const updatedCounter = counter + 1;
 
         setCounter(updatedCounter);
@@ -32,11 +35,11 @@ export const SetInterval = ({
         if (typeof onInterval === 'function') {
           onInterval(updatedCounter);
         }
-      }, timeout);
+      }, interval);
 
-      return () => clearInterval(interval);
+      return () => clearInterval(timer);
     }
-  }, [counter, enabled, onInterval, timeout]);
+  }, [counter, paused, onInterval, interval]);
 
-  return enabled && isInitialCounter ? null : children(counter);
+  return children(counter);
 };
