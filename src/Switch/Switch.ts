@@ -1,46 +1,42 @@
-import { useState } from 'react';
-
 import { Case } from './Case';
 import { Default } from './Default';
 
 interface Props<T> {
   switchValue: T;
-  children: any[];
-  // onChange: (prev: any, curr: any) => void;
-  // onCase?: (casex: any) => void;
-  // onDefault: () => void;
+  children: JSX.Element[];
+  requireDefault?: boolean;
+  allowDuplicates?: boolean;
+  onChange?: (prev: any, curr: any) => void;
+  onCase?: (switchValue: string, casesCount?: number) => void;
+  onDefault?: (switchValue: string) => void;
 }
 
 export const Switch = <T>({
   switchValue,
-  // onCase
   children,
+  requireDefault,
+  allowDuplicates,
+  onChange,
+  onCase,
+  onDefault,
 }: Props<T>) => {
-  const data: any[] = [];
-
-  // const [currentCase, setCurrentCase] = useState<any>();
+  const results = [];
 
   children.forEach((child) => {
-    if (data.length > 0) {
+    if (!allowDuplicates && results.length > 0) {
       return;
     }
 
     if (child.type === Case && child.props.case === switchValue) {
-      data.push(child);
-
-      // if (typeof onCase === 'function') {
-      //   onCase(switchValue);
-      // }
-
-      // setCurrentCase(switchValue);
+      results.push(child);
     }
   });
 
-  if (data.length === 0) {
+  if (results.length === 0) {
     const component = children.find((child) => child.type === Default);
 
-    data.push(component ? component : null);
+    results.push(component ? component : null);
   }
 
-  return data[0];
+  return results[0];
 };
