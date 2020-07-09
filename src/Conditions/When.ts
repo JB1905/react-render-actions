@@ -1,5 +1,5 @@
 interface Props {
-  children: any;
+  children: JSX.Element;
   condition: boolean;
 }
 

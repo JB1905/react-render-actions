@@ -1,5 +1,5 @@
 interface Props {
-  children: any;
+  children: JSX.Element;
 }
 
 export const Else = ({ children }: Props) => children;

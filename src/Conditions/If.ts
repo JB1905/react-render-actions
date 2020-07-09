@@ -2,12 +2,12 @@ import { Then } from './Then';
 import { Else } from './Else';
 
 interface Props {
-  children: any;
+  children: JSX.Element[];
   condition: boolean;
 }
 
 export const If = ({ children, condition }: Props) => {
-  return children.find((child: any) => {
+  return children.find((child) => {
     return condition ? child.type === Then : child.type === Else;
   });
 };
