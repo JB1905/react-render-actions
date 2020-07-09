@@ -79,7 +79,7 @@ import { SetInterval } from 'react-render-actions';
 
 ### Conditions
 
-#### If/Else
+#### If-Else
 
 ```js
 import { If, Then, Else } from 'react-render-actions';
