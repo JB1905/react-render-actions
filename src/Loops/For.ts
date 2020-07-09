@@ -4,11 +4,13 @@ import { Continue } from './Continue';
 interface Props {
   children: JSX.Element[];
   start: number;
-  comparator: (i: any) => any;
-  next: (i: any) => any;
+  comparator: (i: number) => boolean;
+  next: (i: number) => any;
 }
 
 export const For = ({ children, start, comparator, next }: Props) => {
+  const results = [];
+
   for (let i = start; comparator(i); i = next(i)) {
     if (children.find((child) => child.type === Break)) {
       break;
@@ -16,6 +18,8 @@ export const For = ({ children, start, comparator, next }: Props) => {
       continue;
     }
 
-    return children;
+    results.push(children(i));
   }
+
+  return results;
 };

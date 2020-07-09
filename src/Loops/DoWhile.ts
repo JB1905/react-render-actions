@@ -4,7 +4,11 @@ interface Props {
 }
 
 export const DoWhile = ({ children, test }: Props) => {
+  const results = [];
+
   do {
-    return children;
+    results.push(children());
   } while (test);
+
+  return results;
 };

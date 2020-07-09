@@ -4,7 +4,11 @@ interface Props<T> {
 }
 
 export const ForOf = <T>({ children, data }: Props<T>) => {
+  const results = [];
+
   for (let value of data) {
-    return children(value);
+    results.push(children(value));
   }
+
+  return results;
 };

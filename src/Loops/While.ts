@@ -1,10 +1,16 @@
 interface Props {
-  children: any;
-  test: any;
+  children: JSX.Element;
+  test: boolean;
 }
 
 export const While = ({ children, test }: Props) => {
+  const results = [];
+
   while (test) {
-    return children;
+    // interruption(children)
+
+    results.push(children);
   }
+
+  return results;
 };

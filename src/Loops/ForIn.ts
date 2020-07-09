@@ -4,7 +4,14 @@ interface Props<T> {
 }
 
 export const ForIn = <T>({ children, data }: Props<T>) => {
-  for (let value in data) {
-    // return children(value);
+  const results = [];
+
+  for (const item in data) {
+    // if (data.hasOwnProperty(item)) {
+    results.push(children);
+    // results.push(children(item));
+    // }
   }
+
+  return results;
 };
