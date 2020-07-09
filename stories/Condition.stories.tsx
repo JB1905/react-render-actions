@@ -1,5 +1,5 @@
 import React from 'react';
-import { number, boolean } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 
 import { If, Else, Then, When, Unless } from '../src';
 
