@@ -1,6 +1,8 @@
 import { Case } from './Case';
 import { Default } from './Default';
 
+// import { isFunction } from '../helpers/isFunction';
+
 interface Props<T> {
   readonly switchValue: T;
   readonly children: JSX.Element[];
@@ -9,6 +11,7 @@ interface Props<T> {
   readonly onChange?: (prev: any, curr: any) => void;
   readonly onCase?: (switchValue: string, casesCount?: number) => void;
   readonly onDefault?: (switchValue: string) => void;
+  readonly onError?: (err: Error) => void; // add silent error (in console) if is onChange
 }
 
 export const Switch = <T>({
@@ -19,6 +22,7 @@ export const Switch = <T>({
   onChange,
   onCase,
   onDefault,
+  onError,
 }: Props<T>) => {
   const results = [];
 
@@ -35,7 +39,27 @@ export const Switch = <T>({
   if (results.length === 0) {
     const component = children.find((child) => child.type === Default);
 
-    results.push(component ? component : null);
+    if (component) {
+      results.push(component);
+
+      // if (typeof onDefault === 'function') {
+      //   onDefault(switchValue);
+      // }
+    } else {
+      if (requireDefault) {
+        const error = new Error(
+          `Default component is required. You can set requireDefault to false in Switch component to disable this error.`
+        );
+
+        if (typeof onError === 'function') {
+          onError(error);
+        } else {
+          throw error;
+        }
+      } else {
+        results.push(null);
+      }
+    }
   }
 
   return results[0];
