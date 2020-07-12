@@ -2,7 +2,7 @@ import { Then } from './Then';
 import { Else } from './Else';
 
 interface Props {
-  children: JSX.Element[];
+  children: JSX.Element[] | any[];
   condition: boolean;
 }
 
