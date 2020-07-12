@@ -8,25 +8,25 @@ export default {
 };
 
 export const ifElse = () => (
-  <If condition={boolean('condition', 10 > 9)}>
+  <If condition={boolean('condition', true)}>
     <Then>
-      <p>Done</p>
+      <p>True</p>
     </Then>
 
     <Else>
-      <p>Else</p>
+      <p>False</p>
     </Else>
   </If>
 );
 
 export const when = () => (
-  <When condition={boolean('condition', 10 > 9)}>
-    <p>Done</p>
+  <When condition={boolean('condition', true)}>
+    <p>True</p>
   </When>
 );
 
 export const unless = () => (
-  <Unless condition={boolean('condition', 10 > 9)}>
-    <p>Done</p>
+  <Unless condition={boolean('condition', false)}>
+    <p>False</p>
   </Unless>
 );
