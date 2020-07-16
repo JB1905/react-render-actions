@@ -45,38 +45,3 @@ describe('SetTimeout', () => {
     expect(container).toMatchSnapshot();
   });
 });
-
-// describe('SetInterval', () => {
-// it('should display final result', async () => {
-//   const onInterval = jest.fn();
-//   const { getByText } = render(
-//     <SetInterval initialCounter={0} interval={2000} onInterval={onInterval}>
-//       {(i) => <p>{i}</p>}
-//     </SetInterval>
-//   );
-//   await waitFor(() => expect(getByText('2')).toBeDefined(), {
-//     timeout: 4000,
-//     interval: 2000,
-//   });
-//   expect(onInterval).toHaveBeenCalledTimes(2);
-//   expect(onInterval).toHaveBeenCalledWith([1, 2]);
-// });
-// it('should ', async () => {
-//   const onInterval = jest.fn();
-//   const { getByText } = render(
-//     <SetInterval initialCounter={2} interval={1000}>
-//       {(i) => <p>{i}</p>}
-//     </SetInterval>
-//   );
-//   expect(onInterval).toHaveBeenCalledTimes(0);
-// });
-// it('should ', async () => {
-//   const onInterval = jest.fn();
-//   const { getByText } = render(
-//     <SetInterval initialCounter={0} interval={2000}>
-//       {(i) => <p>{i}</p>}
-//     </SetInterval>
-//   );
-//   expect(onInterval).toHaveBeenCalledTimes(0);
-// });
-// });
