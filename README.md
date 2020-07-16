@@ -55,6 +55,8 @@ import { Reduce } from 'react-render-actions';
 </Reduce>
 ```
 
+---
+
 ### Timeouts
 
 #### SetTimeout
@@ -77,6 +79,8 @@ import { SetInterval } from 'react-render-actions';
 </SetInterval>
 ```
 
+---
+
 ### Conditions
 
 #### If-Else
@@ -95,15 +99,27 @@ import { If, Then, Else } from 'react-render-actions';
 </If>
 ```
 
+##### Available options
+
+| Param     | Type          | Default | Description         |
+| --------- | ------------- | ------- | ------------------- |
+| condition | () => boolean | ` `     | condition to be met |
+
 #### When
 
 ```js
 import { When } from 'react-render-actions';
 
 <When condition={2 < 3}>
-    <p>2 is smaller than 3</p>
+  <p>2 is smaller than 3</p>
 </When>
 ```
+
+##### Available options
+
+| Param     | Type          | Default | Description         |
+| --------- | ------------- | ------- | ------------------- |
+| condition | () => boolean | ` `     | condition to be met |
 
 #### Unless
 
@@ -111,9 +127,15 @@ import { When } from 'react-render-actions';
 import { Unless } from 'react-render-actions';
 
 <Unless condition={2 > 3}>
-    <p>2 isn't greater than 3</p>
+  <p>2 isn't greater than 3</p>
 </Unless>
 ```
+
+##### Available options
+
+| Param     | Type          | Default | Description         |
+| --------- | ------------- | ------- | ------------------- |
+| condition | () => boolean | ` `     | condition to be met |
 
 ## License
 
