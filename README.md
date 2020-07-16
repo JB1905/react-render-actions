@@ -11,6 +11,7 @@ Set of JavaScript actions to use during component rendering
 
 - [How to Install](#how-to-install)
 - [Components](#components)
+  - [Switch](#switch)
   - [Functions](#functions)
     - [Map](#map)
     - [Filter](#filter)
@@ -66,6 +67,22 @@ import { Switch, Case, Default } from 'react-render-actions';
   </Default>
 </Switch>
 ```
+
+##### Available options
+
+***Switch***
+
+| Param         | Type   | Default | Description  |
+| ------------- | ------ | ------- | ------------ |
+| `switchValue` | string | ` `     | Switch value |
+
+***Case***
+
+| Param  | Type   | Default | Description |
+| ------ | ------ | ------- | ----------- |
+| `case` | string | ` `     | Case value  |
+
+---
 
 ### Functions
 
@@ -181,6 +198,8 @@ import { If, Then, Else } from 'react-render-actions';
 ```
 
 ##### Available options
+
+***If***
 
 | Param     | Type          | Default | Description         |
 | --------- | ------------- | ------- | ------------------- |
