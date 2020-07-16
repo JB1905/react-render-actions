@@ -38,6 +38,7 @@
   "homepage": "https://github.com/JB1905/react-render-actions#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^8.1.0",
+    "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-knobs": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
     "@storybook/addons": "^5.3.19",

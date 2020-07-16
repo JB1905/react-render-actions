@@ -1,8 +1,8 @@
-interface Props {
-  data: any;
-  children: any;
+interface Props<T> {
+  readonly data: T[];
+  readonly children: (value: T, index: number, array: T[]) => JSX.Element;
 }
 
-export const Map = ({ data, children }: Props) => {
-  return data.map((item: any) => children(item));
+export const Map = <T>({ data, children }: Props<T>) => {
+  return data.map(children);
 };

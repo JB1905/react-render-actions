@@ -51,6 +51,12 @@ import { Map } from 'react-render-actions';
 </Map>
 ```
 
+##### Available options
+
+| Param  | Type  | Default | Description |
+| ------ | ----- | ------- | ----------- |
+| `data` | array | ` `     | Data to map |
+
 #### Filter
 
 ```js
@@ -60,6 +66,13 @@ import { Filter } from 'react-render-actions';
   {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
 </Filter>
 ```
+
+##### Available options
+
+| Param     | Type    | Default              | Description |
+| --------- | ------- | -------------------- | ----------- |
+| `data`    | array   | ` ` | Data to filter |
+| `pattern` | boolean | ` ` | Filter pattern |
 
 #### Reduce
 
@@ -71,6 +84,13 @@ import { Reduce } from 'react-render-actions';
 </Reduce>
 ```
 
+##### Available options
+
+| Param     | Type    | Default              | Description |
+| --------- | ------- | -------------------- | ----------- |
+| `data`    | array   | ` ` | Data to reduce |
+| `pattern` | boolean | ` ` | Reduce pattern |
+
 ---
 
 ### Timeouts
@@ -81,77 +101,36 @@ import { Reduce } from 'react-render-actions';
 import { SetTimeout } from 'react-render-actions';
 
 <SetTimeout enabled timeout={4000}>
-  <p>Hello</p>
+  <p>Hello World!</p>
 </SetTimeout>
 ```
+
+##### Available options
+
+| Param       | Type       | Default                               | Description |
+| ----------- | ---------- | ------------------------------------- | ----------- |
+| `timeout`   | number     | ` ` | Timeout value (in milliseconds) |
+| `enabled`   | boolean    | ` ` | Start timeout                   |
+| `onTimeout` | () => void | ` ` | Callback on timeout             |
 
 #### SetInterval
 
 ```js
 import { SetInterval } from 'react-render-actions';
 
-<SetInterval enabled initialCounter={0} timeout={2000}>
+<SetInterval initialCounter={0} interval={2000}>
   {(i) => <p>{i}</p>}
 </SetInterval>
 ```
 
----
-
-### Conditions
-
-#### If-Else
-
-```js
-import { If, Then, Else } from 'react-render-actions';
-
-<If condition={2 < 3}>
-  <Then>
-    <p>2 is smaller than 3</p>
-  </Then>
-
-  <Else>
-    <p>2 isn't smaller than 3</p>
-  </Else>
-</If>
-```
-
 ##### Available options
 
-| Param     | Type          | Default | Description         |
-| --------- | ------------- | ------- | ------------------- |
-| condition | () => boolean | ` `     | condition to be met |
-
-#### When
-
-```js
-import { When } from 'react-render-actions';
-
-<When condition={2 < 3}>
-  <p>2 is smaller than 3</p>
-</When>
-```
-
-##### Available options
-
-| Param     | Type          | Default | Description         |
-| --------- | ------------- | ------- | ------------------- |
-| condition | () => boolean | ` `     | condition to be met |
-
-#### Unless
-
-```js
-import { Unless } from 'react-render-actions';
-
-<Unless condition={2 > 3}>
-  <p>2 isn't greater than 3</p>
-</Unless>
-```
-
-##### Available options
-
-| Param     | Type          | Default | Description         |
-| --------- | ------------- | ------- | ------------------- |
-| condition | () => boolean | ` `     | condition to be met |
+| Param            | Type                      | Default                                | Description |
+| ---------------- | ------------------------- | -------------------------------------- | ----------- |
+| `initialCounter` | number                    | ` ` | Initial counter value            |
+| `paused`         | boolean                   | ` ` | Pause timeout                    |
+| `interval`       | number                    | ` ` | Interval value (in milliseconds) |
+| `onInterval`     | (counter: number) => void | ` ` | Callback on interval             |
 
 ## License
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, getAllByTestId } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Map, Filter, Reduce } from '../src';
 
@@ -12,15 +12,11 @@ const bands = [
   { name: 'U2' },
 ];
 
-interface Output {
-  name: string;
-}
-
 describe('Map', () => {
   it('should map provided values', () => {
     const { container, getByText, getAllByTestId } = render(
       <Map data={bands}>
-        {({ name }: Output) => (
+        {({ name }) => (
           <p data-testid="band-name" key={name}>
             {name}
           </p>
@@ -38,11 +34,11 @@ describe('Map', () => {
 
 describe('Filter', () => {
   it('should filter provided values', () => {
-    const pattern = ({ name }: Output) => name !== 'U2';
+    const pattern = ({ name }: { name: string }) => name !== 'U2';
 
     const { container, getByTestId } = render(
       <Filter data={bands} pattern={pattern}>
-        {(filteredData: Output[]) => (
+        {(filteredData) => (
           <p data-testid="result">{JSON.stringify(filteredData)}</p>
         )}
       </Filter>
@@ -66,7 +62,7 @@ describe('Reduce', () => {
 
     const { container, getByTestId } = render(
       <Reduce data={data} pattern={pattern}>
-        {(value: number) => <p data-testid="result">{value}</p>}
+        {(value) => <p data-testid="result">{value}</p>}
       </Reduce>
     );
 
