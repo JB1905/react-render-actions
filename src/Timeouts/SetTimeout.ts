@@ -5,6 +5,10 @@ interface Props {
   readonly timeout: number;
   readonly enabled?: boolean;
   readonly onTimeout?: () => void;
+  readonly onDone?: () => void;
+  readonly onEnabled?: () => void;
+  readonly onDisabled?: () => void;
+  readonly onDestroy?: () => void;
 }
 
 export const SetTimeout = ({
@@ -12,6 +16,10 @@ export const SetTimeout = ({
   enabled,
   timeout,
   onTimeout,
+  onDone,
+  onEnabled,
+  onDisabled,
+  onDestroy,
 }: Props) => {
   const [done, setDone] = useState(false);
 

@@ -6,6 +6,9 @@ interface Props {
   readonly paused?: boolean;
   readonly interval: number;
   readonly onInterval?: (counter: number) => void;
+  readonly onStart?: () => void;
+  readonly onPause?: () => void;
+  readonly onDestroy?: () => void;
 }
 
 export const SetInterval = ({
@@ -14,6 +17,9 @@ export const SetInterval = ({
   paused,
   interval,
   onInterval,
+  onStart,
+  onPause,
+  onDestroy,
 }: Props) => {
   const [counter, setCounter] = useState(initialCounter);
 
