@@ -7,6 +7,22 @@
 
 Set of JavaScript actions to use during component rendering
 
+## Contents
+
+- [How to Install](#how-to-install)
+- [Components](#components)
+  - [Functions](#functions)
+    - [Map](#map)
+    - [Filter](#filter)
+    - [Reduce](#reduce)
+  - [Timeouts](#timeouts)
+    - [SetTimeout](#settimeout)
+    - [SetInterval](#setinterval)
+  - [Conditions](#conditions)
+    - [If-Else](#if-else)
+    - [When](#when)
+    - [Unless](#unless)
+
 ## How to Install
 
 First, install the library in your project by npm:
