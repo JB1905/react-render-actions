@@ -11,18 +11,18 @@ Set of JavaScript actions to use during component rendering
 
 - [How to Install](#how-to-install)
 - [Components](#components)
-  - [Switch](#switch)
-  - [Functions](#functions)
-    - [Map](#map)
-    - [Filter](#filter)
-    - [Reduce](#reduce)
-  - [Timeouts](#timeouts)
-    - [SetTimeout](#settimeout)
-    - [SetInterval](#setinterval)
   - [Conditions](#conditions)
     - [If-Else](#if-else)
     - [When](#when)
     - [Unless](#unless)
+  - [Functions](#functions)
+    - [Map](#map)
+    - [Filter](#filter)
+    - [Reduce](#reduce)
+  - [Switch](#switch)
+  - [Timeouts](#timeouts)
+    - [SetTimeout](#settimeout)
+    - [SetInterval](#setinterval)
 
 ## How to Install
 
@@ -39,145 +39,6 @@ $ yarn add react-render-actions
 ```
 
 ## Components
-
-### Switch
-
-```js
-import { Switch, Case, Default } from 'react-render-actions';
-
-<Switch switchValue="banana">
-  <Case case="apple">
-    <p>Apple</p>
-  </Case>
-
-  <Case case="banana">
-    <p>Banana</p>
-  </Case>
-
-  <Case case="pear">
-    <p>Pear</p>
-  </Case>
-
-  <Case case="raspberry">
-    <p>Raspberry</p>
-  </Case>
-
-  <Default>
-    <p>Fruit not found</p>
-  </Default>
-</Switch>
-```
-
-##### Available options
-
-***Switch***
-
-| Param         | Type   | Default | Description  |
-| ------------- | ------ | ------- | ------------ |
-| `switchValue` | string | ` `     | Switch value |
-
-***Case***
-
-| Param  | Type   | Default | Description |
-| ------ | ------ | ------- | ----------- |
-| `case` | string | ` `     | Case value  |
-
----
-
-### Functions
-
-#### Map
-
-```js
-import { Map } from 'react-render-actions';
-
-<Map data={[1, 2, 3]}>
-  {(item, index) => <p key={index}>{item}</p>}
-</Map>
-```
-
-##### Available options
-
-| Param  | Type  | Default | Description |
-| ------ | ----- | ------- | ----------- |
-| `data` | array | ` `     | Data to map |
-
-#### Filter
-
-```js
-import { Filter } from 'react-render-actions';
-
-<Filter data={[1, 2, 3]} pattern={(item) => item !== 2}>
-  {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
-</Filter>
-```
-
-##### Available options
-
-| Param     | Type    | Default              | Description |
-| --------- | ------- | -------------------- | ----------- |
-| `data`    | array   | ` ` | Data to filter |
-| `pattern` | boolean | ` ` | Filter pattern |
-
-#### Reduce
-
-```js
-import { Reduce } from 'react-render-actions';
-
-<Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
-  {(reducedValue) => <p>{reducedValue}</p>}
-</Reduce>
-```
-
-##### Available options
-
-| Param     | Type    | Default              | Description |
-| --------- | ------- | -------------------- | ----------- |
-| `data`    | array   | ` ` | Data to reduce |
-| `pattern` | boolean | ` ` | Reduce pattern |
-
----
-
-### Timeouts
-
-#### SetTimeout
-
-```js
-import { SetTimeout } from 'react-render-actions';
-
-<SetTimeout enabled timeout={4000}>
-  <p>Hello World!</p>
-</SetTimeout>
-```
-
-##### Available options
-
-| Param       | Type       | Default                               | Description |
-| ----------- | ---------- | ------------------------------------- | ----------- |
-| `timeout`   | number     | ` ` | Timeout value (in milliseconds) |
-| `enabled`   | boolean    | ` ` | Start timeout                   |
-| `onTimeout` | () => void | ` ` | Callback on timeout             |
-
-#### SetInterval
-
-```js
-import { SetInterval } from 'react-render-actions';
-
-<SetInterval initialCounter={0} interval={2000}>
-  {(i) => <p>{i}</p>}
-</SetInterval>
-```
-
-##### Available options
-
-| Param            | Type                      | Default                                | Description |
-| ---------------- | ------------------------- | -------------------------------------- | ----------- |
-| `initialCounter` | number                    | ` ` | Initial counter value            |
-| `paused`         | boolean                   | ` ` | Pause timeout                    |
-| `interval`       | number                    | ` ` | Interval value (in milliseconds) |
-| `onInterval`     | (counter: number) => void | ` ` | Callback on interval             |
-
----
 
 ### Conditions
 
@@ -236,6 +97,145 @@ import { Unless } from 'react-render-actions';
 | Param     | Type          | Default | Description         |
 | --------- | ------------- | ------- | ------------------- |
 | condition | () => boolean | ` `     | condition to be met |
+
+---
+
+### Functions
+
+#### Map
+
+```js
+import { Map } from 'react-render-actions';
+
+<Map data={[1, 2, 3]}>
+  {(item, index) => <p key={index}>{item}</p>}
+</Map>
+```
+
+##### Available options
+
+| Param  | Type  | Default | Description |
+| ------ | ----- | ------- | ----------- |
+| `data` | array | ` `     | Data to map |
+
+#### Filter
+
+```js
+import { Filter } from 'react-render-actions';
+
+<Filter data={[1, 2, 3]} pattern={(item) => item !== 2}>
+  {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
+</Filter>
+```
+
+##### Available options
+
+| Param     | Type    | Default              | Description |
+| --------- | ------- | -------------------- | ----------- |
+| `data`    | array   | ` ` | Data to filter |
+| `pattern` | boolean | ` ` | Filter pattern |
+
+#### Reduce
+
+```js
+import { Reduce } from 'react-render-actions';
+
+<Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
+  {(reducedValue) => <p>{reducedValue}</p>}
+</Reduce>
+```
+
+##### Available options
+
+| Param     | Type    | Default              | Description |
+| --------- | ------- | -------------------- | ----------- |
+| `data`    | array   | ` ` | Data to reduce |
+| `pattern` | boolean | ` ` | Reduce pattern |
+
+---
+
+### Switch
+
+```js
+import { Switch, Case, Default } from 'react-render-actions';
+
+<Switch switchValue="banana">
+  <Case case="apple">
+    <p>Apple</p>
+  </Case>
+
+  <Case case="banana">
+    <p>Banana</p>
+  </Case>
+
+  <Case case="pear">
+    <p>Pear</p>
+  </Case>
+
+  <Case case="raspberry">
+    <p>Raspberry</p>
+  </Case>
+
+  <Default>
+    <p>Fruit not found</p>
+  </Default>
+</Switch>
+```
+
+##### Available options
+
+***Switch***
+
+| Param         | Type   | Default | Description  |
+| ------------- | ------ | ------- | ------------ |
+| `switchValue` | string | ` `     | Switch value |
+
+***Case***
+
+| Param  | Type   | Default | Description |
+| ------ | ------ | ------- | ----------- |
+| `case` | string | ` `     | Case value  |
+
+---
+
+### Timeouts
+
+#### SetTimeout
+
+```js
+import { SetTimeout } from 'react-render-actions';
+
+<SetTimeout enabled timeout={4000}>
+  <p>Hello World!</p>
+</SetTimeout>
+```
+
+##### Available options
+
+| Param       | Type       | Default                               | Description |
+| ----------- | ---------- | ------------------------------------- | ----------- |
+| `timeout`   | number     | ` ` | Timeout value (in milliseconds) |
+| `enabled`   | boolean    | ` ` | Start timeout                   |
+| `onTimeout` | () => void | ` ` | Callback on timeout             |
+
+#### SetInterval
+
+```js
+import { SetInterval } from 'react-render-actions';
+
+<SetInterval initialCounter={0} interval={2000}>
+  {(i) => <p>{i}</p>}
+</SetInterval>
+```
+
+##### Available options
+
+| Param            | Type                      | Default                                | Description |
+| ---------------- | ------------------------- | -------------------------------------- | ----------- |
+| `initialCounter` | number                    | ` ` | Initial counter value            |
+| `paused`         | boolean                   | ` ` | Pause timeout                    |
+| `interval`       | number                    | ` ` | Interval value (in milliseconds) |
+| `onInterval`     | (counter: number) => void | ` ` | Callback on interval             |
 
 ## License
 
