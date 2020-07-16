@@ -1,5 +1,5 @@
 interface Props {
-  children: JSX.Element | any;
+  children: JSX.Element;
 }
 
 export const Then = ({ children }: Props) => children;
