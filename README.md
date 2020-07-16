@@ -132,6 +132,64 @@ import { SetInterval } from 'react-render-actions';
 | `interval`       | number                    | ` ` | Interval value (in milliseconds) |
 | `onInterval`     | (counter: number) => void | ` ` | Callback on interval             |
 
+---
+
+### Conditions
+
+#### If-Else
+
+```js
+import { If, Then, Else } from 'react-render-actions';
+
+<If condition={2 < 3}>
+  <Then>
+    <p>2 is smaller than 3</p>
+  </Then>
+
+  <Else>
+    <p>2 isn't smaller than 3</p>
+  </Else>
+</If>
+```
+
+##### Available options
+
+| Param     | Type          | Default | Description         |
+| --------- | ------------- | ------- | ------------------- |
+| condition | () => boolean | ` `     | condition to be met |
+
+#### When
+
+```js
+import { When } from 'react-render-actions';
+
+<When condition={2 < 3}>
+  <p>2 is smaller than 3</p>
+</When>
+```
+
+##### Available options
+
+| Param     | Type          | Default | Description         |
+| --------- | ------------- | ------- | ------------------- |
+| condition | () => boolean | ` `     | condition to be met |
+
+#### Unless
+
+```js
+import { Unless } from 'react-render-actions';
+
+<Unless condition={2 > 3}>
+  <p>2 isn't greater than 3</p>
+</Unless>
+```
+
+##### Available options
+
+| Param     | Type          | Default | Description         |
+| --------- | ------------- | ------- | ------------------- |
+| condition | () => boolean | ` `     | condition to be met |
+
 ## License
 
 This project is licensed under the MIT License © 2020-present Jakub Biesiada
