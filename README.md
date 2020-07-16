@@ -30,14 +30,16 @@ $ yarn add react-render-actions
 ```js
 import { Map } from 'react-render-actions';
 
-<Map data={[1, 2, 3]}>{(item, index) => <p key={index}>{item}</p>}</Map>;
+<Map data={[1, 2, 3]}>
+  {(item, index) => <p key={index}>{item}</p>}
+</Map>
 ```
 
 ##### Available options
 
 | Param  | Type  | Default | Description |
 | ------ | ----- | ------- | ----------- |
-| `data` | array | ``      |             |
+| `data` | array | ` `     | Data to map |
 
 #### Filter
 
@@ -46,15 +48,15 @@ import { Filter } from 'react-render-actions';
 
 <Filter data={[1, 2, 3]} pattern={(item) => item !== 2}>
   {(filteredData) => <p>{JSON.stringify(filteredData)}</p>}
-</Filter>;
+</Filter>
 ```
 
 ##### Available options
 
-| Param     | Type          | Default | Description |
-| --------- | ------------- | ------- | ----------- |
-| `data`    | array         | ``      |             |
-| `pattern` | () => boolean | ``      |             |
+| Param     | Type    | Default              | Description |
+| --------- | ------- | -------------------- | ----------- |
+| `data`    | array   | ` ` | Data to filter |
+| `pattern` | boolean | ` ` | Filter pattern |
 
 #### Reduce
 
@@ -63,15 +65,15 @@ import { Reduce } from 'react-render-actions';
 
 <Reduce data={[1, 2, 3]} pattern={(prev, next) => prev + next}>
   {(reducedValue) => <p>{reducedValue}</p>}
-</Reduce>;
+</Reduce>
 ```
 
 ##### Available options
 
-| Param     | Type  | Default | Description |
-| --------- | ----- | ------- | ----------- |
-| `data`    | array | ``      |             |
-| `pattern` | () => | ``      |             |
+| Param     | Type    | Default              | Description |
+| --------- | ------- | -------------------- | ----------- |
+| `data`    | array   | ` ` | Data to reduce |
+| `pattern` | boolean | ` ` | Reduce pattern |
 
 ---
 
@@ -83,19 +85,17 @@ import { Reduce } from 'react-render-actions';
 import { SetTimeout } from 'react-render-actions';
 
 <SetTimeout enabled timeout={4000}>
-  <p>Hello</p>
-</SetTimeout>;
+  <p>Hello World!</p>
+</SetTimeout>
 ```
 
 ##### Available options
 
-| Param        | Type        | Default | Description |
-| ------------ | ----------- | ------- | ----------- |
-| `timeout`    | number      | ``      |             |
-| `enabled`    | boolean     | ``      |             |
-| `onTimeout`  |             | ``      |             |
-| `onEnabled`  |             | ``      |             |
-| `onDisabled` |             | ``      |             |
+| Param       | Type       | Default                               | Description |
+| ----------- | ---------- | ------------------------------------- | ----------- |
+| `timeout`   | number     | ` ` | Timeout value (in milliseconds) |
+| `enabled`   | boolean    | ` ` | Start timeout                   |
+| `onTimeout` | () => void | ` ` | Callback on timeout             |
 
 #### SetInterval
 
@@ -104,19 +104,17 @@ import { SetInterval } from 'react-render-actions';
 
 <SetInterval initialCounter={0} interval={2000}>
   {(i) => <p>{i}</p>}
-</SetInterval>;
+</SetInterval>
 ```
 
 ##### Available options
 
-| Param            | Type        | Default | Description |
-| ---------------- | ----------- | ------- | ----------- |
-| `initialCounter` |             | ``      |             |
-| `paused`         |             | ``      |             |
-| `interval`       |             | ``      |             |
-| `onInterval`     |             | ``      |             |
-| `onStart`        |             | ``      |             |
-| `onPause`        |             | ``      |             |
+| Param            | Type                      | Default                                | Description |
+| ---------------- | ------------------------- | -------------------------------------- | ----------- |
+| `initialCounter` | number                    | ` ` | Initial counter value            |
+| `paused`         | boolean                   | ` ` | Pause timeout                    |
+| `interval`       | number                    | ` ` | Interval value (in milliseconds) |
+| `onInterval`     | (counter: number) => void | ` ` | Callback on interval             |
 
 ## License
 
