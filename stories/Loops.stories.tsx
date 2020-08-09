@@ -7,8 +7,8 @@ export default {
 };
 
 export const forLoop = () => (
-  <For start={0} comparator={(i: any) => i < 10} next={(i: any) => i++}>
-    {(value: any) => <p>Hello</p>}
+  <For start={0} comparator={(i) => i < 10} next={(i) => i++}>
+    {(value) => <p>Hello</p>}
   </For>
 );
 
@@ -21,17 +21,17 @@ export const forIn = () => {
 
   return (
     <ForIn data={data}>
-      {(value: any) => <p>{/* {value}: {data[value]} */}</p>}
+      {(value) => <p>{/* {value}: {data[value]} */}</p>}
     </ForIn>
   );
 };
 
 export const forOf = () => (
-  <ForOf data={[1, 2, 3]}>{(value: any) => <p>{value}</p>}</ForOf>
+  <ForOf data={[1, 2, 3]}>{(value) => <p>{value}</p>}</ForOf>
 );
 
 export const forEach = () => (
-  <ForEach data={[1, 2, 3]}>{(item: any) => <p>{item}</p>}</ForEach>
+  <ForEach data={[1, 2, 3]}>{(item) => <p>{item}</p>}</ForEach>
 );
 
 export const whileLoop = () => {
