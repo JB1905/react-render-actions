@@ -4,7 +4,7 @@
 [![NPM downloads](https://img.shields.io/npm/dm/react-render-actions?style=flat-square)](https://www.npmjs.com/package/react-render-actions)
 [![NPM license](https://img.shields.io/npm/l/react-render-actions?style=flat-square)](https://www.npmjs.com/package/react-render-actions)
 [![Codecov](https://img.shields.io/codecov/c/github/JB1905/react-render-actions?style=flat-square)](https://codecov.io/gh/JB1905/react-render-actions)
-[![Travis](https://img.shields.io/travis/JB1905/react-render-actions?style=flat-square)](https://travis-ci.org/JB1905/react-render-actions)
+[![Travis](https://img.shields.io/travis/JB1905/react-render-actions/master?style=flat-square)](https://travis-ci.org/JB1905/react-render-actions)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-render-actions?style=flat-square)](https://bundlephobia.com/result?p=react-render-actions)
 
 ## About
