@@ -11,6 +11,12 @@
 
 Set of JavaScript actions to use during component rendering
 
+### Similar Projects
+
+- [React For](https://github.com/MJez29/react-for/) by [Michal Jez](https://github.com/MJez29/)
+- [React If](https://github.com/romac/react-if/) by [Romain Ruetschi](https://github.com/romac/)
+- [React Switch Case](https://github.com/AlexSergey/react-switch-case/) by [Sergey](https://github.com/AlexSergey/)
+
 ## Contents
 
 - [How to Install](#how-to-install)
