@@ -233,6 +233,8 @@ import { DoWhile } from 'react-render-actions';
 </DoWhile>
 ```
 
+---
+
 ### Switch
 
 ```js
