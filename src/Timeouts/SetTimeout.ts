@@ -1,19 +1,35 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface Props {
-  children: any;
-  enabled: boolean;
-  timeout: number;
+  readonly children: JSX.Element;
+  readonly timeout: number;
+  readonly enabled?: boolean;
+  readonly onTimeout?: () => void;
 }
 
-export const SetTimeout = ({ children, enabled, timeout }: Props) => {
+export const SetTimeout = ({
+  children,
+  enabled,
+  timeout,
+  onTimeout,
+}: Props) => {
   const [done, setDone] = useState(false);
 
-  if (enabled) {
-    setTimeout(() => {
-      setDone(true);
-    }, timeout);
-  }
+  useEffect(() => {
+    if (enabled) {
+      const timer = setTimeout(() => {
+        setDone(true);
+
+        if (typeof onTimeout === 'function') {
+          onTimeout();
+        }
+      }, timeout);
+
+      return () => clearTimeout(timer);
+    } else {
+      setDone(false);
+    }
+  }, [enabled, onTimeout, timeout]);
 
   return done ? children : null;
 };

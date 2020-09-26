@@ -1,28 +1,47 @@
 import React from 'react';
-import { render, findByText } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 
 import { SetTimeout, SetInterval } from '../src';
 
 describe('SetTimeout', () => {
+  const TIMEOUT = 4000;
+
   it('should render content after timeout', async () => {
-    const { container } = render(
-      <SetTimeout enabled timeout={4000}>
-        <p>Hello</p>
+    const onTimeout = jest.fn();
+
+    const { container, getByText } = render(
+      <SetTimeout enabled timeout={TIMEOUT} onTimeout={onTimeout}>
+        <p>Hello World!</p>
       </SetTimeout>
     );
 
-    expect(await findByText(container, 'Hello')).toBeDefined();
-  });
-});
+    await waitFor(
+      () => {
+        expect(getByText('Hello World!')).toBeDefined();
 
-describe('SetInterval', () => {
-  it('should display final result', async () => {
-    const { container } = render(
-      <SetInterval enabled initialCounter={0} timeout={2000}>
-        {(i: number) => <p>{i}</p>}
-      </SetInterval>
+        expect(onTimeout).toHaveBeenCalledTimes(1);
+      },
+      {
+        timeout: TIMEOUT,
+      }
     );
 
-    expect(await findByText(container, '5')).toBeDefined();
+    expect(container).toMatchSnapshot();
+  });
+
+  it('should not render content after timeout when timer is not enabled', async () => {
+    const onTimeout = jest.fn();
+
+    const { container } = render(
+      <SetTimeout timeout={TIMEOUT} onTimeout={onTimeout}>
+        <p>Hello World!</p>
+      </SetTimeout>
+    );
+
+    await waitFor(() => expect(onTimeout).toHaveBeenCalledTimes(0), {
+      timeout: TIMEOUT,
+    });
+
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,9 +1,9 @@
-interface Props {
-  data: any;
-  children: any;
-  pattern: any;
+interface Props<T> {
+  readonly data: T[];
+  readonly children: (filteredData: T[]) => JSX.Element;
+  readonly pattern: (value: T, index: number, array: T[]) => unknown;
 }
 
-export const Filter = ({ data, children, pattern }: Props) => {
-  return children(data.filter((item: any) => pattern(item)));
+export const Filter = <T>({ data, children, pattern }: Props<T>) => {
+  return children(data.filter(pattern));
 };

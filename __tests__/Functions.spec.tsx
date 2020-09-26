@@ -8,47 +8,68 @@ const bands = [
   { name: 'Green Day' },
   { name: 'The Offspring' },
   { name: 'Sum 41' },
-  { name: 'Angels & Airwaves' },
   { name: 'Blink 182' },
   { name: 'U2' },
 ];
 
-interface Output {
-  name: string;
-}
-
 describe('Map', () => {
-  it('should render ', () => {
-    const { getByText } = render(
-      <Map data={bands}>{({ name }: Output) => <p key={name}>{name}</p>}</Map>
+  it('should map provided values', () => {
+    const { container, getByText, getAllByTestId } = render(
+      <Map data={bands}>
+        {({ name }) => (
+          <p data-testid="band-name" key={name}>
+            {name}
+          </p>
+        )}
+      </Map>
     );
 
-    expect(getByText('The Killers')).toBeDefined();
+    expect(container).toMatchSnapshot();
+
+    bands.map(({ name }) => expect(getByText(name)).toBeDefined());
+
+    expect(getAllByTestId('band-name').length).toBe(6);
   });
 });
 
 describe('Filter', () => {
-  it('should', () => {
-    const { getByText } = render(
-      <Filter data={bands} pattern={({ name }: Output) => name !== 'U2'}>
-        {({ name }: Output) => <p key={name}>{name}</p>}
+  it('should filter provided values', () => {
+    const pattern = ({ name }: { name: string }) => name !== 'U2';
+
+    const { container, getByTestId } = render(
+      <Filter data={bands} pattern={pattern}>
+        {(filteredData) => (
+          <p data-testid="result">{JSON.stringify(filteredData)}</p>
+        )}
       </Filter>
     );
 
-    expect(getByText('U2')).not.toBeDefined();
+    expect(container).toMatchSnapshot();
+
+    const resultContent = getByTestId('result').innerHTML;
+
+    expect(resultContent).toBe(JSON.stringify(bands.filter(pattern)));
+
+    expect(JSON.parse(resultContent).length).toBe(5);
   });
 });
 
 describe('Reduce', () => {
-  it('should', () => {
-    const numbers = [1, 2, 3, 4, 5];
+  it('should reduce provided values', () => {
+    const data = [1, 2, 3, 4, 5];
 
-    const { container } = render(
-      <Reduce data={numbers} pattern={(numbers: Output) => numbers}>
-        {({ name }: Output) => <p key={name}>{name}</p>}
+    const pattern = (prev: number, next: number) => prev + next;
+
+    const { container, getByTestId } = render(
+      <Reduce data={data} pattern={pattern}>
+        {(value) => <p data-testid="result">{value}</p>}
       </Reduce>
     );
 
-    expect(container.firstChild).toBe(true);
+    expect(container).toMatchSnapshot();
+
+    expect(getByTestId('result').innerHTML).toBe(
+      data.reduce(pattern).toString()
+    );
   });
 });
