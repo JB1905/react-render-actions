@@ -71,7 +71,7 @@ import { If, Then, Else } from 'react-render-actions';
 
 ##### Available options
 
-***If***
+**_If_**
 
 | Param     | Type          | Default | Description         |
 | --------- | ------------- | ------- | ------------------- |
@@ -141,10 +141,10 @@ import { Filter } from 'react-render-actions';
 
 ##### Available options
 
-| Param     | Type    | Default              | Description |
-| --------- | ------- | -------------------- | ----------- |
-| `data`    | array   | ` ` | Data to filter |
-| `pattern` | boolean | ` ` | Filter pattern |
+| Param     | Type    | Default | Description    |
+| --------- | ------- | ------- | -------------- |
+| `data`    | array   | ` `     | Data to filter |
+| `pattern` | boolean | ` `     | Filter pattern |
 
 #### Reduce
 
@@ -158,10 +158,10 @@ import { Reduce } from 'react-render-actions';
 
 ##### Available options
 
-| Param     | Type    | Default              | Description |
-| --------- | ------- | -------------------- | ----------- |
-| `data`    | array   | ` ` | Data to reduce |
-| `pattern` | boolean | ` ` | Reduce pattern |
+| Param     | Type    | Default | Description    |
+| --------- | ------- | ------- | -------------- |
+| `data`    | array   | ` `     | Data to reduce |
+| `pattern` | boolean | ` `     | Reduce pattern |
 
 ---
 
@@ -265,13 +265,13 @@ import { Switch, Case, Default } from 'react-render-actions';
 
 ##### Available options
 
-***Switch***
+**_Switch_**
 
 | Param         | Type   | Default | Description  |
 | ------------- | ------ | ------- | ------------ |
 | `switchValue` | string | ` `     | Switch value |
 
-***Case***
+**_Case_**
 
 | Param  | Type   | Default | Description |
 | ------ | ------ | ------- | ----------- |
@@ -293,11 +293,14 @@ import { SetTimeout } from 'react-render-actions';
 
 ##### Available options
 
-| Param       | Type       | Default                               | Description |
-| ----------- | ---------- | ------------------------------------- | ----------- |
-| `timeout`   | number     | ` ` | Timeout value (in milliseconds) |
-| `enabled`   | boolean    | ` ` | Start timeout                   |
-| `onTimeout` | () => void | ` ` | Callback on timeout             |
+| Param        | Type       | Default | Description                     |
+| ------------ | ---------- | ------- | ------------------------------- |
+| `timeout`    | number     | ` `     | Timeout value (in milliseconds) |
+| `enabled`    | boolean    | ` `     | Start timeout                   |
+| `onTimeout`  | () => void | ` `     | Callback on timeout             |
+| `onEnabled`  | () => void | ` `     | Callback on enabled             |
+| `onDisabled` | () => void | ` `     | Callback on disabled            |
+| `onDestroy`  | () => void | ` `     | Callback on destroy             |
 
 #### SetInterval
 
@@ -311,12 +314,15 @@ import { SetInterval } from 'react-render-actions';
 
 ##### Available options
 
-| Param            | Type                      | Default                                | Description |
-| ---------------- | ------------------------- | -------------------------------------- | ----------- |
-| `initialCounter` | number                    | ` ` | Initial counter value            |
-| `paused`         | boolean                   | ` ` | Pause timeout                    |
-| `interval`       | number                    | ` ` | Interval value (in milliseconds) |
-| `onInterval`     | (counter: number) => void | ` ` | Callback on interval             |
+| Param            | Type                      | Default | Description                      |
+| ---------------- | ------------------------- | ------- | -------------------------------- |
+| `initialCounter` | number                    | ` `     | Initial counter value            |
+| `paused`         | boolean                   | ` `     | Pause timeout                    |
+| `interval`       | number                    | ` `     | Interval value (in milliseconds) |
+| `onInterval`     | (counter: number) => void | ` `     | Callback on interval             |
+| `onStart`        | () => void                | ` `     | Callback on start                |
+| `onPause`        | () => void                | ` `     | Callback on pause                |
+| `onDestroy`      | () => void                | ` `     | Callback on pause                |
 
 ## License
 

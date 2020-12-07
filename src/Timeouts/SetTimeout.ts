@@ -5,7 +5,6 @@ interface Props {
   readonly timeout: number;
   readonly enabled?: boolean;
   onTimeout?: () => void;
-  onDone?: () => void;
   onEnabled?: () => void;
   onDisabled?: () => void;
   onDestroy?: () => void;
