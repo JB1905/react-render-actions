@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
 interface Props {
-  readonly children: (counter: number) => JSX.Element;
+  children: (counter: number) => JSX.Element;
   readonly initialCounter?: number;
   readonly paused?: boolean;
   readonly interval: number;
-  readonly onInterval?: (counter: number) => void;
-  readonly onStart?: () => void;
-  readonly onPause?: () => void;
-  readonly onDestroy?: () => void;
+  onInterval?: (counter: number) => void;
+  onStart?: () => void;
+  onPause?: () => void;
+  onDestroy?: () => void;
 }
 
 export const SetInterval = ({
@@ -25,19 +25,25 @@ export const SetInterval = ({
 
   useEffect(() => {
     if (!paused) {
+      onStart?.();
+
       const timer = setInterval(() => {
         const updatedCounter = counter + 1;
 
         setCounter(updatedCounter);
 
-        if (typeof onInterval === 'function') {
-          onInterval(updatedCounter);
-        }
+        onInterval?.(updatedCounter);
       }, interval);
 
-      return () => clearInterval(timer);
+      return () => {
+        clearInterval(timer);
+
+        onDestroy?.();
+      };
+    } else {
+      onPause?.();
     }
-  }, [counter, paused, onInterval, interval]);
+  }, [counter, paused, onInterval, interval, onStart, onDestroy, onPause]);
 
   return children(counter);
 };
