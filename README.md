@@ -1,4 +1,4 @@
-# [react-render-actions](https://github.com/jb1905/react-render-actions)
+# [react-render-actions](https://github.com/JB1905/react-render-actions)
 
 [![NPM version](https://img.shields.io/npm/v/react-render-actions?style=flat-square)](https://www.npmjs.com/package/react-render-actions)
 [![NPM downloads](https://img.shields.io/npm/dm/react-render-actions?style=flat-square)](https://www.npmjs.com/package/react-render-actions)
