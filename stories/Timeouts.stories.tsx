@@ -6,7 +6,7 @@ import { SetTimeout, SetInterval } from '../src';
 
 export default {
   title: 'Timeouts',
-  // subcomponents: { SetTimeout, SetInterval },
+  subcomponents: { SetTimeout, SetInterval },
 } as Meta;
 
 interface SetTimeoutProps {
