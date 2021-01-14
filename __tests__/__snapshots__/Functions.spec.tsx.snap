@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should filter provided values 1`] = `
+<div>
+  <p
+    data-testid="result"
+  >
+    [{"name":"The Killers"},{"name":"Green Day"},{"name":"The Offspring"},{"name":"Sum 41"},{"name":"Blink 182"}]
+  </p>
+</div>
+`;
+
+exports[`Map should map provided values 1`] = `
+<div>
+  <p
+    data-testid="band-name"
+  >
+    The Killers
+  </p>
+  <p
+    data-testid="band-name"
+  >
+    Green Day
+  </p>
+  <p
+    data-testid="band-name"
+  >
+    The Offspring
+  </p>
+  <p
+    data-testid="band-name"
+  >
+    Sum 41
+  </p>
+  <p
+    data-testid="band-name"
+  >
+    Blink 182
+  </p>
+  <p
+    data-testid="band-name"
+  >
+    U2
+  </p>
+</div>
+`;
+
+exports[`Reduce should reduce provided values 1`] = `
+<div>
+  <p
+    data-testid="result"
+  >
+    15
+  </p>
+</div>
+`;

@@ -1,29 +1,49 @@
 import { useState, useEffect } from 'react';
 
 interface Props {
-  children: any;
-  initialCounter?: number;
-  enabled?: boolean;
-  timeout: number;
+  children: (counter: number) => JSX.Element;
+  readonly initialCounter?: number;
+  readonly paused?: boolean;
+  readonly interval: number;
+  onInterval?: (counter: number) => void;
+  onStart?: () => void;
+  onPause?: () => void;
+  onDestroy?: () => void;
 }
 
 export const SetInterval = ({
   children,
   initialCounter = 0,
-  enabled = true,
-  timeout,
+  paused,
+  interval,
+  onInterval,
+  onStart,
+  onPause,
+  onDestroy,
 }: Props) => {
   const [counter, setCounter] = useState(initialCounter);
 
   useEffect(() => {
-    if (enabled) {
-      const interval = setInterval(() => {
-        setCounter(counter + 1);
-      }, timeout);
+    if (!paused) {
+      onStart?.();
 
-      return () => clearInterval(interval);
+      const timer = setInterval(() => {
+        const updatedCounter = counter + 1;
+
+        setCounter(updatedCounter);
+
+        onInterval?.(updatedCounter);
+      }, interval);
+
+      return () => {
+        clearInterval(timer);
+
+        onDestroy?.();
+      };
+    } else {
+      onPause?.();
     }
-  }, [counter, enabled, timeout]);
+  }, [counter, paused, onInterval, interval, onStart, onDestroy, onPause]);
 
-  return enabled ? children(counter) : null;
+  return children(counter);
 };
