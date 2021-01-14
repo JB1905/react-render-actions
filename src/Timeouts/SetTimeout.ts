@@ -4,7 +4,10 @@ interface Props {
   readonly children: JSX.Element;
   readonly timeout: number;
   readonly enabled?: boolean;
-  readonly onTimeout?: () => void;
+  onTimeout?: () => void;
+  onEnabled?: () => void;
+  onDisabled?: () => void;
+  onDestroy?: () => void;
 }
 
 export const SetTimeout = ({
@@ -12,24 +15,33 @@ export const SetTimeout = ({
   enabled,
   timeout,
   onTimeout,
+  onEnabled,
+  onDisabled,
+  onDestroy,
 }: Props) => {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
+    onEnabled?.();
+
     if (enabled) {
       const timer = setTimeout(() => {
         setDone(true);
 
-        if (typeof onTimeout === 'function') {
-          onTimeout();
-        }
+        onTimeout?.();
       }, timeout);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+
+        onDestroy?.();
+      };
     } else {
+      onDisabled?.();
+
       setDone(false);
     }
-  }, [enabled, onTimeout, timeout]);
+  }, [enabled, onDestroy, onDisabled, onEnabled, onTimeout, timeout]);
 
   return done ? children : null;
 };
