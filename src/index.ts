@@ -17,6 +17,10 @@ export { DoWhile } from './Loops/DoWhile';
 export { Break } from './Loops/Break';
 export { Continue } from './Loops/Continue';
 
+export { RPromise } from './Promises/Promise';
+export { Resolve } from './Promises/Resolve';
+export { Reject } from './Promises/Reject';
+
 export { Switch } from './Switch/Switch';
 export { Case } from './Switch/Case';
 export { Default } from './Switch/Default';

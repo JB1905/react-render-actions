@@ -36,6 +36,7 @@ Set of JavaScript actions to use during component rendering
     - [ForEach](#foreach)
     - [While](#while)
     - [DoWhile](#dowhile)
+  - [Promises](#promises)
   - [Switch](#switch)
   - [Timeouts](#timeouts)
     - [SetTimeout](#settimeout)
@@ -237,6 +238,26 @@ import { DoWhile } from 'react-render-actions';
 <DoWhile test={2 > 1}>
   <p>Hello World!</p>
 </DoWhile>
+```
+
+---
+
+### Promises
+
+```js
+import { RPromise, Resolve, Reject } from 'react-render-actions';
+
+const promise = {}
+
+<RPromise promise={promise}>
+  <Resolve>
+    <p>Resolved!</p>
+  </Resolve>
+
+  <Reject>
+    <p>Rejected!</p>
+  </Reject>
+</RPromise>
 ```
 
 ---
