@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { RPromise, Resolve, Reject } from '../src';
+import { RPromise, Resolve, Reject } from '../../../src';
 
 describe('Promise', () => {
   const promise = new Promise((resolve, reject) => {

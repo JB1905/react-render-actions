@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { RPromise, Resolve, Reject } from '../src';
+import { RPromise, Resolve, Reject } from '../../../src';
 
 export default {
   title: 'Promise',

@@ -10,7 +10,7 @@ import {
   DoWhile,
   Break,
   Continue,
-} from '../src';
+} from '../../../src';
 
 describe('For', () => {
   it('should', () => {

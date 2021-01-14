@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { If, Else, Then, When, Unless } from '../src';
+import { If, Else, Then, When, Unless } from '../../../src';
 
 describe('If-Else', () => {
   it('should render Then', () => {

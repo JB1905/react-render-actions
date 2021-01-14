@@ -1,7 +1,7 @@
 {
-  "name": "react-render-actions",
+  "name": "@react-render-actions/promises",
   "version": "1.0.0-beta.1",
-  "description": "Set of JavaScript actions to use during component rendering",
+  "//description": "Set of JavaScript actions to use during component rendering",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/react-render-actions.cjs.js",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Switch, Case, Default } from '../src';
+import { Switch, Case, Default } from '../../../src';
 
 describe('Switch', () => {
   it.each([

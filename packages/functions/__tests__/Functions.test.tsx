@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Map, Filter, Reduce } from '../src';
+import { Map, Filter, Reduce } from '../../../src';
 
 const bands = [
   { name: 'The Killers' },
