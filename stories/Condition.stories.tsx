@@ -9,7 +9,7 @@ interface Props {
 
 export default {
   title: 'Condition',
-  // subcomponents: { If, Else, Then, When, Unless },
+  subcomponents: { If, Else, Then, When, Unless },
   args: {
     condition: true,
   },

@@ -4,8 +4,8 @@ import { Then } from './Then';
 import { Else } from './Else';
 
 interface Props {
-  children: JSX.Element[];
-  condition: boolean;
+  readonly children: JSX.Element[];
+  readonly condition: boolean;
 }
 
 export const If = ({ children, condition }: Props) => (

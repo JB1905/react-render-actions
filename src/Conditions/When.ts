@@ -1,6 +1,6 @@
 interface Props {
-  children: JSX.Element;
-  condition: boolean;
+  readonly children: JSX.Element;
+  readonly condition: boolean;
 }
 
 export const When = ({ children, condition }: Props) => {
