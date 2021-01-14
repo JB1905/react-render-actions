@@ -5,10 +5,14 @@ interface Props {
   children: JSX.Element[];
 }
 
-export const interruption = ({ children }: Props) => {
+export const interruption = ({
+  children,
+}: // onShouldBreak,
+// onShouldContinue,
+Props) => {
   if (children.find((child) => child.type === Break)) {
-    break;
+    // break;
   } else if (children.find((child) => child.type === Continue)) {
-    continue;
+    // continue;
   }
 };

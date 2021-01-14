@@ -1,16 +1,24 @@
 import React from 'react';
 
-import { For, ForIn, ForOf, While, DoWhile, ForEach } from '../src';
+import { For, ForIn, ForOf, While, DoWhile, ForEach, Break } from '../src';
 
 export default {
   title: 'Loop',
 };
 
-export const forLoop = () => (
-  <For start={0} comparator={(i) => i < 10} next={(i) => i++}>
-    {(value) => <p>Hello</p>}
-  </For>
-);
+// export const forLoop = () => (
+//   <For start={0} comparator={(i) => i < 10} next={(i) => i + 1}>
+//     {/* {(value: any) => (
+//       <> */}
+//     <p>Hello</p>
+//     <p>Hello</p>
+//     <p>Hello</p>
+
+//     {/* {index === 5 && <Break />} */}
+//     {/* </> */}
+//     {/* )} */}
+//   </For>
+// );
 
 export const forIn = () => {
   const data = {
