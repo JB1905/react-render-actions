@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Map, Filter, Reduce } from '../../../src';
+import { Map, Filter, Reduce } from '../src';
 
 interface Props {
   readonly data: number[];

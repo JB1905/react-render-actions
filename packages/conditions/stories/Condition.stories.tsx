@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { If, Else, Then, When, Unless } from '../../../src';
+import { If, Else, Then, When, Unless } from '../src';
 
 interface Props {
   readonly condition: boolean;

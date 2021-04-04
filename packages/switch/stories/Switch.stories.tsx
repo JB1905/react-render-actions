@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { Switch, Case, Default } from '../../../src';
+import { Switch, Case, Default } from '../src';
 
 export default {
   title: 'Switch',
