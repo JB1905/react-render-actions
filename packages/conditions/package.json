@@ -1,7 +1,7 @@
 {
   "name": "@react-render-actions/conditions",
   "version": "1.0.0-beta.1",
-  "//description": "Set of JavaScript actions to use during component rendering",
+  "description": "<TODO>",
   "author": "Jakub Biesiada",
   "license": "MIT",
   "main": "lib/react-render-actions.cjs.js",
@@ -29,14 +29,12 @@
   "keywords": [
     "react",
     "rendering",
-    "loop",
-    "async-await",
-    "if-else",
-    "switch-case",
-    "promise",
-    "map",
-    "filter",
-    "reduce"
+    "condition",
+    "if",
+    "else",
+    "when",
+    "then",
+    "unless"
   ],
   "bugs": {
     "url": "https://github.com/JB1905/react-render-actions/issues"
