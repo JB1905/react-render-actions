@@ -7,6 +7,11 @@
   "main": "lib/react-render-actions.cjs.js",
   "module": "lib/react-render-actions.esm.js",
   "types": "lib/index.d.ts",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "prepack": "npm run clean && npm run prettier && npm run lint && npm run build",
     "clean": "rimraf lib/*",
