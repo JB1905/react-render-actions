@@ -7,10 +7,17 @@ describe('SetTimeout', () => {
   const TIMEOUT = 4000;
 
   it('should render content after timeout', async () => {
+    const onEnabled = jest.fn();
+    const onDisabled = jest.fn();
     const onTimeout = jest.fn();
 
     const { container, getByText } = render(
-      <SetTimeout enabled timeout={TIMEOUT} onTimeout={onTimeout}>
+      <SetTimeout
+        enabled
+        timeout={TIMEOUT}
+        onEnabled={onEnabled}
+        onTimeout={onTimeout}
+      >
         <p>Hello World!</p>
       </SetTimeout>
     );
@@ -19,6 +26,8 @@ describe('SetTimeout', () => {
       () => {
         expect(getByText('Hello World!')).toBeDefined();
 
+        expect(onEnabled).toHaveBeenCalled();
+        expect(onDisabled).not.toHaveBeenCalled();
         expect(onTimeout).toHaveBeenCalledTimes(1);
       },
       {
@@ -30,6 +39,8 @@ describe('SetTimeout', () => {
   });
 
   it('should not render content after timeout when timer is not enabled', async () => {
+    const onEnabled = jest.fn();
+    const onDisabled = jest.fn();
     const onTimeout = jest.fn();
 
     const { container } = render(
@@ -38,10 +49,27 @@ describe('SetTimeout', () => {
       </SetTimeout>
     );
 
-    await waitFor(() => expect(onTimeout).toHaveBeenCalledTimes(0), {
-      timeout: TIMEOUT,
-    });
+    await waitFor(
+      () => {
+        expect(onEnabled).not.toHaveBeenCalled();
+        expect(onDisabled).toHaveBeenCalled();
+        expect(onTimeout).toHaveBeenCalledTimes(0);
+      },
+      {
+        timeout: TIMEOUT,
+      }
+    );
 
     expect(container).toMatchSnapshot();
+  });
+});
+
+describe('SetInterval', () => {
+  it.skip('should', () => {
+    // const { container } = render(
+    //   <SetInterval>
+    //     <p>Hello World!</p>
+    //   </SetInterval>
+    // );
   });
 });

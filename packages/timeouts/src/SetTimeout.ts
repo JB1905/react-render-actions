@@ -22,9 +22,9 @@ export const SetTimeout = ({
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    onEnabled?.();
-
     if (enabled) {
+      onEnabled?.();
+
       const timer = setTimeout(() => {
         setDone(true);
 
