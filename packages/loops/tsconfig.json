@@ -10,5 +10,5 @@
     "moduleResolution": "Node",
     "esModuleInterop": true
   },
-  "include": ["src", "packages/timeouts/src/SetInterval.ts"]
+  "include": ["src"]
 }
